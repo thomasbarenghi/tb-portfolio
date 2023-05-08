@@ -8,8 +8,8 @@ const client = sanityClient({
   useCdn: true,
 });
 
-//const url = `https://ltxzs899.api.sanity.io/v1/data/query/production?query=*[_type == "portfolio"]`;
-const url = "";
+const url = `https://ltxzs899.api.sanity.io/v1/data/query/production?query=*[_type == "portfolio"]`;
+//const url = "";
 //creamos una funcion que nos permite obtener la url de la imagen
 const builder = imageUrlBuilder(client);
 function urlFor(source) {
