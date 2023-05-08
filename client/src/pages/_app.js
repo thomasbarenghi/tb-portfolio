@@ -5,8 +5,57 @@ import store, { persistor } from "@/redux/store/store";
 import { PersistGate } from "redux-persist/integration/react";
 import { Toaster } from "sonner";
 import { Element, scroller } from "react-scroll";
+import MouseFollower from "mouse-follower";
+import gsap from "gsap";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
 export default function App({ Component, pageProps }) {
+  const router = useRouter();
+  MouseFollower.registerGSAP(gsap);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+    return () => setIsMounted(false);
+  }, [router.pathname]);
+
+  useEffect(() => {
+    if (isMounted && process.browser) {
+      const cursor = new MouseFollower({
+        iconSvgSrc: "/icon/instagram.svg",
+        iconSvgClassName: "clase-svg",
+        iconSvgNamePrefix: "-",
+      });
+
+      const elementosConClase = document.querySelectorAll(".deslizante");
+
+      elementosConClase.forEach((el) => {
+        el.addEventListener("mouseenter", () => {
+          cursor.setText("Ver proyecto");
+        });
+
+        el.addEventListener("mouseleave", () => {
+          cursor.removeText();
+        });
+      });
+
+      return () => {
+        elementosConClase.forEach((el) => {
+          el.removeEventListener("mouseenter", () => {
+            cursor.setText("Ver proyecto");
+          });
+  
+          el.removeEventListener("mouseleave", () => {
+            cursor.removeText();
+          });
+        });
+  
+        cursor.destroy();
+      };
+    }
+  }, [isMounted, router.pathname]);
+
   const handleScroll = () => {
     const scrollableElement = document.documentElement;
 
@@ -42,8 +91,8 @@ export default function App({ Component, pageProps }) {
             }}
           />
           <Element name="targetElement">
-            <Master >
-            <Component {...pageProps} />
+            <Master>
+              <Component {...pageProps} />
             </Master>
           </Element>
           <Footer />

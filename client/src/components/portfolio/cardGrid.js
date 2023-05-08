@@ -25,7 +25,7 @@ export default function CardGrid({ item }) {
         }}
       >
         <AnimatePresence>
-          <motion.div className=" h-full w-full flex flex-col gap-4 " whileHover={{ scale: 0.95 }}>
+          <motion.div className="deslizante h-full w-full flex flex-col gap-4 " whileHover={{ scale: 0.95 }}>
             <div className="relative aspect-[4/3] h-full w-full ">
               <NextImage
                 src={item?.coverImage}

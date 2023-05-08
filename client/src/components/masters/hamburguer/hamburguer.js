@@ -58,7 +58,7 @@ export const Hamburguer = () => {
     >
       <ReactSVG
         src="/icon/menu.svg"
-        className="h-[30px] w-[30px] cursor-pointer"
+        className="h-[30px] w-[30px] cursor-pointer fill-current text-white"
         onClick={() => {
           handleOpen();
         }}

@@ -2,6 +2,7 @@ import React, { useEffect, useMemo } from "react";
 import { useDispatch } from "react-redux";
 import { getPortfolioItems } from "@/redux/slices/portfolio";
 import { debounce } from "lodash";
+import { toast } from "sonner";
 
 export default function Master({ children }) {
   const dispatch = useDispatch();
@@ -17,6 +18,10 @@ export default function Master({ children }) {
   useEffect(() => {
     delayedDispatch();
   }, [delayedDispatch]);
+
+  useEffect(() => {
+  toast("Este proyecto aun esta en desarrollo")
+  }, [])
 
   return <div className="">{children}</div>;
 }

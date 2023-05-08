@@ -1,12 +1,14 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { Quick, quickVisibilityExternal, Card } from "@/components";
+import { useState } from "react";
+
 export default function PortfolioFlex({ items }) {
   return (
     <div>
       <Quick />
       <AnimatePresence>
         <motion.div
-          className="flex h-auto w-full items-start justify-start gap-4 overflow-x-scroll "
+          className=" flex h-auto w-full items-start justify-start gap-4 overflow-x-scroll "
           //animacion desde la derecha
           initial={{ x: "100%" }}
           animate={{ x: 0 }}

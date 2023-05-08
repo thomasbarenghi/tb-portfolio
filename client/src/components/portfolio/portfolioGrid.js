@@ -6,7 +6,7 @@ export default function PortfolioGrid({ items }) {
       <Quick />
       <AnimatePresence>
         <motion.div
-          className=" grid h-auto  w-full grid-cols-2 gap-4 "
+          className=" grid h-auto  w-full grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-4 "
           //animacion desde la derecha
           initial={{ x: "100%" }}
           animate={{ x: 0 }}

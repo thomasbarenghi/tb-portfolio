@@ -31,8 +31,7 @@ const variants2 = {
 const items = [
   { title: "Home", url: "/" },
   { title: "Proyectos", url: "/work" },
-  { title: "About", url: "/about" },
-  { title: "Descarga mi CV", url: "/projects" },
+  { title: "Descarga mi CV", url: "/cv" },
   
 ];
 

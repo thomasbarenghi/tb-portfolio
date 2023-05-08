@@ -18,7 +18,7 @@ export default function PortfolioCard({ item }) {
     <>
       <div
         onClick={handleCardClick}
-        className="portfolioItem aspect-square min-h-[50vh] min-w-[60vw] cursor-pointer"
+        className=" portfolioItem aspect-square  min-w-[55vw] cursor-pointer"
         key={item._id}
         style={{
           position: "relative",
@@ -28,7 +28,7 @@ export default function PortfolioCard({ item }) {
       >
         <AnimatePresence>
           <motion.div
-            className="absolute left-0 top-0 h-full w-full "
+            className="deslizante absolute left-0 top-0 h-full w-full "
             whileHover={{ scale: 0.95 }}
           >
             <NextImage

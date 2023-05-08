@@ -95,3 +95,31 @@ export const tecnologias = [
       text: "Muy buen compañero y programador, muy buena resolucion de problemas y creatividad de soluciones."
     },
   ]
+
+  
+export const valoresItems = [
+  {
+    icono: "/icon/integridad.svg",
+    titulo: "Integridad",
+    descripcion:
+      "Valoro profundamente la integridad en mi vida personal y profesional. Creo en ser sincero y ético en todas mis acciones y decisiones, construyendo relaciones basadas en la confianza y el respeto.",
+  },
+  {
+    icono: "/icon/innovacion.svg",
+    titulo: "Innovación",
+    descripcion:
+      "Me esfuerzo por ver las cosas desde una perspectiva diferente y buscar soluciones creativas a los problemas que se presentan. No tengo miedo a arriesgarme y a explorar nuevas ideas y tecnologías.",
+  },
+  {
+    icono: "/icon/trabajo-equipo.svg",
+    titulo: "Trabajo en equipo",
+    descripcion:
+      "Me esfuerzo por escuchar y comprender las perspectivas de mis colegas y compañeros, y trabajar juntos hacia un objetivo común. La comunicación y la colaboración son valores fundamentales para mí en el trabajo en equipo, y trato de fomentarlos en cada proyecto en el que participo.",
+  },
+  {
+    icono: "/icon/empatia.svg",
+    titulo: "Empatía",
+    descripcion:
+      "Me esfuerzo por escuchar y comprender las perspectivas de mis colegas y compañeros, y trabajar juntos hacia un objetivo común. La comunicación y la colaboración son valores fundamentales para mí en el trabajo en equipo, y trato de fomentarlos en cada proyecto en el que participo.",
+  },
+]

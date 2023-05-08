@@ -1,8 +1,8 @@
 import Image from "next/image";
-import { Main, Card, PortfolioFlex } from "@/components";
+import { Main, PortfolioGrid } from "@/components";
 import Head from "next/head";
 import { useSelector } from "react-redux";
-import { tecnologias, resenasItems } from "@/data/data";
+import { tecnologias, resenasItems, valoresItems } from "@/data/data";
 import { motion, AnimatePresence } from "framer-motion";
 import Masonry from "react-masonry-css";
 
@@ -26,13 +26,15 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Home</title>
+        <title>Work</title>
       </Head>
-      <Main>
+      <Main className="pt-0">
         <Hero sortedPosts={sortedPosts} />
         <SobreMi />
         <Habilidades />
         <Resenas />
+        <Line />
+        <Portfolio sortedPosts={sortedPosts} />
       </Main>
     </>
   );
@@ -41,22 +43,25 @@ export default function Home() {
 function Line() {
   return (
     <div className="padding-x-estilo2 ">
-      <hr className=" border-t-2 border-gray-100" />
+      <hr className=" border-t-2 border-gray-200" />
     </div>
   );
 }
 
 function Hero({ sortedPosts }) {
   return (
-    <section className="padding-x-estilo2 flex flex-col gap-10 pt-4" id="home">
+    <section
+      className="relative flex h-[65vh] w-full flex-col items-center justify-center gap-10 "
+      id="home"
+    >
       <AnimatePresence>
         <motion.div
-          className="flex w-full flex-col items-center justify-center gap-4"
+          className="padding-x-estilo2 z-20 flex w-full flex-col items-center justify-center gap-4 text-white"
           whileHover={{ y: -10 }}
           transition={{ duration: 0.2 }}
         >
           <motion.div
-            className="flex w-full items-center justify-center gap-4 "
+            className="flex flex-col lg:flex-row w-full items-start lg:items-center justify-center gap-4 "
             //animacion desde la izquierda
             initial={{ x: "-100%" }}
             animate={{ x: 0 }}
@@ -69,24 +74,33 @@ function Hero({ sortedPosts }) {
               height={100}
               className="aspect-square rounded-full object-cover"
             />
-            <h1 className="text-titulo3-light  w-max ">
+            <h1 className="text-titulo2-light  text-white ">
               Hola! soy{" "}
-              <span className="text-titulo3-semibold font-semibold">
+              <span className="text-titulo2-semibold font-semibold text-white">
                 Thomas Barenghi, <br />
               </span>
               desarrollador{" "}
-              <span className="text-titulo3-semibold font-georgiaBoldItalic font-semibold italic">
-                FullStack
+              <span className="text-titulo2-semibold font-georgiaBoldItalic font-semibold italic text-white">
+                Fullstack
               </span>{" "}
               y diseñador{" "}
-              <span className="text-titulo3-semibold font-georgiaBoldItalic font-semibold italic">
+              <span className="text-titulo2-semibold font-georgiaBoldItalic font-semibold italic text-white">
                 UI/UX
               </span>
             </h1>
           </motion.div>
         </motion.div>
       </AnimatePresence>
-      <PortfolioFlex items={sortedPosts} />
+      <div className="absolute left-0 top-0 z-[-1] h-full  w-full bg-black">
+        <Image
+          src="/image/demo6.jpg"
+          alt="hero"
+          layout="fill"
+          objectFit="cover"
+          quality={100}
+        />
+      </div>
+      <div className="absolute left-0 top-0 z-[0] h-full w-full bg-black opacity-70 "></div>
     </section>
   );
 }
@@ -166,6 +180,67 @@ function Habilidades() {
   );
 }
 
+function Valores() {
+  return (
+    <section className="padding-x-estilo2 flex w-full flex-col items-start justify-start gap-2 bg-white py-24 text-start">
+      <div className=" flex flex-col gap-10">
+        <h1 className="w-full text-start">
+          ¿Cuales son{" "}
+          <span className=" text-4xl font-semibold ">mis valores?</span>
+        </h1>
+        <div className="grid w-full grid-cols-2 gap-10">
+          {valoresItems.map((item, index) => (
+            <div
+              key={index}
+              className="flex flex-col items-start gap-2 rounded-3xl text-start"
+            >
+              <div className="flex flex-row items-center gap-2">
+                <Image
+                  src={item.icono}
+                  alt={item.titulo}
+                  width={40}
+                  height={40}
+                />
+                <h3 className="font-semibold">{item.titulo}</h3>
+              </div>
+
+              <p className="text-black">{item.descripcion}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Portfolio({ sortedPosts }) {
+  return (
+    <section className="padding-x-estilo2 flex flex-col gap-8 py-24" id="home">
+      <AnimatePresence>
+        <motion.div
+          className="flex w-full flex-col items-start justify-center gap-2"
+          whileHover={{ y: -10 }}
+          transition={{ duration: 0.2 }}
+        >
+          <motion.div
+            className="flex flex-col items-start justify-start gap-1 "
+            //animacion desde la izquierda
+            initial={{ x: "-100%" }}
+            animate={{ x: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <h1 className="w-full text-start">
+              Mis proyectos{" "}
+              <span className=" text-4xl font-semibold ">destacados 🙌</span>
+            </h1>
+          </motion.div>
+        </motion.div>
+      </AnimatePresence>
+      <PortfolioGrid items={sortedPosts} />
+    </section>
+  );
+}
+
 function Resenas() {
   const breakpointColumnsObj = {
     default: 2,
@@ -175,10 +250,13 @@ function Resenas() {
   };
 
   return (
-    <section className="padding-x-estilo2 flex flex-col gap-10 pt-24 py-20" id="home">
+    <section
+      className="padding-x-estilo2 flex flex-col gap-10 py-20 pt-24  "
+      id="home"
+    >
       <div className="flex w-full flex-col items-center justify-center gap-10">
         <h1 className="w-full text-start">
-          Reseñas de <span className=" text-4xl font-semibold ">colegas</span>
+          Reseñas de <span className=" text-4xl font-semibold ">colegas 🤓</span>
         </h1>
         <Masonry
           breakpointCols={breakpointColumnsObj}
@@ -186,8 +264,11 @@ function Resenas() {
           columnClassName="masonry-grid-column"
         >
           {resenasItems.map((item, index) => (
-            <div key={index} className="masonry-grid-item rounded-3xl bg-white flex flex-col gap-3">
-              <div className="flex gap-2 items-center" >
+            <div
+              key={index}
+              className="masonry-grid-item flex  flex-col gap-3 rounded-3xl"
+            >
+              <div className="flex items-center gap-2">
                 <Image
                   src={item.picture}
                   alt={item.author}
