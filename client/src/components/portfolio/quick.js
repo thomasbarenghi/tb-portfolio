@@ -36,8 +36,8 @@ function Quick() {
       {quickVisibility && (
         <AnimatePresence>
           <div
-            className="animate-slide-up fixed z-40 flex h-screen w-screen items-end justify-center pt-10 align-middle"
-            style={{ background: "#00000066", top: 0, left: 0 }}
+            className="animate-slide-up bg-[#000000c7] fixed z-40 flex h-screen w-screen items-end justify-center pt-16 align-middle"
+            style={{ background: "", top: 0, left: 0 }}
             id="overlay"
           >
             <div
@@ -46,10 +46,10 @@ function Quick() {
               onClick={() => setQuickVisibility(false)}
             >
               <Image
-                width={15}
-                height={15}
+                width={20}
+                height={20}
                 alt={"close"}
-                src={"/icon/cross.svg"}
+                src={"/icon/cross-white.svg"}
               />
             </div>
             <motion.div

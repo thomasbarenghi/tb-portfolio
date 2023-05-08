@@ -27,7 +27,7 @@ const sidebar = {
   },
 };
 
-export const Hamburguer = () => {
+export const Hamburguer = ({mode}) => {
   const [isOpen, toggleOpen] = useCycle(false, true);
   const [visible, setVisible] = useState(false);
   const containerRef = useRef(null);
@@ -58,7 +58,7 @@ export const Hamburguer = () => {
     >
       <ReactSVG
         src="/icon/menu.svg"
-        className="h-[30px] w-[30px] cursor-pointer fill-current text-white"
+        className={`h-[30px] w-[30px] cursor-pointer fill-current ${mode === "white" ? "text-white" : "text-[#FFC3B1] " }`}
         onClick={() => {
           handleOpen();
         }}

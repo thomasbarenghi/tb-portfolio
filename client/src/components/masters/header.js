@@ -34,7 +34,7 @@ export default function Header() {
     >
       <div className=" padding-x-estilo2 flex flex-row-reverse items-center justify-between py-8 lg:flex-row">
         <div className="relative w-auto w-[40px] h-[40px] ">
-          <Hamburguer />
+          <Hamburguer mode={router.pathname === "/" ? "white" : "black"} />
         </div>
         <Link
           href="/"

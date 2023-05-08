@@ -12,7 +12,8 @@ import { useRouter } from "next/router";
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
-  MouseFollower.registerGSAP(gsap);
+  
+MouseFollower.registerGSAP(gsap);
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -21,6 +22,9 @@ export default function App({ Component, pageProps }) {
   }, [router.pathname]);
 
   useEffect(() => {
+
+    if(window.innerWidth < 1024) return;
+
     if (isMounted && process.browser) {
       const cursor = new MouseFollower({
         iconSvgSrc: "/icon/instagram.svg",

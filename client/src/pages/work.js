@@ -26,7 +26,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Work</title>
+        <title>Work | Thomas Barenghi</title>
       </Head>
       <Main>
         <Hero sortedPosts={sortedPosts} />
@@ -37,7 +37,7 @@ export default function Home() {
 
 function Hero({ sortedPosts }) {
   return (
-    <section className="padding-x-estilo2 flex flex-col gap-10 pt-5 pb-24" id="home">
+    <section className="padding-x-estilo2 flex flex-col gap-12 pt-2 pb-24" id="home">
       <AnimatePresence>
         <motion.div
           className="flex w-full flex-col items-start justify-center gap-4"

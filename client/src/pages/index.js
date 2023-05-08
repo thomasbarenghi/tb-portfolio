@@ -26,7 +26,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Work</title>
+        <title>Inicio | Thomas Barenghi</title>
       </Head>
       <Main className="pt-0">
         <Hero sortedPosts={sortedPosts} />
@@ -51,7 +51,7 @@ function Line() {
 function Hero({ sortedPosts }) {
   return (
     <section
-      className="relative flex h-[65vh] w-full flex-col items-center justify-center gap-10 "
+      className="relative flex h-[85vh] lg:h-[65vh] w-full flex-col items-center justify-center gap-10 "
       id="home"
     >
       <AnimatePresence>
