@@ -66,7 +66,7 @@ export const Hamburguer = ({mode}) => {
       {visible && (
         <motion.div
           id="okok"
-          className="background fixed left-0 top-0 h-screen w-[300px] bg-white shadow-xl "
+          className="background fixed right-0 lg:left-0 top-0 h-screen w-[300px] bg-white shadow-xl "
           variants={sidebar}
         >
           <Navigation />
