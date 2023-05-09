@@ -124,7 +124,7 @@ const sidebar = {
           className="background fixed right-0 lg:left-0 top-0 h-screen w-[300px] bg-white shadow-xl "
           variants={isLgScreen ? sidebar : sidebarLg}
         >
-          <Navigation />
+          <Navigation toggle={() => handleClose()} />
           {isOpen && <MenuToggle toggle={() => handleClose()} />}
         </motion.div>
       )}

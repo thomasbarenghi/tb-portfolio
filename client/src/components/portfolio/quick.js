@@ -1,9 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
-import { remark } from "remark";
-import html from "remark-html";
-import parse from "html-react-parser";
-import stringify from "remark-stringify";
+
 import { useSelector } from "react-redux";
 import { motion, AnimatePresence } from "framer-motion";
 import RenderContent from "@/utils/renderContent";
@@ -22,14 +19,6 @@ function Quick() {
   };
 
   Quick.handleVisibility = handleVisibilityRef.current;
-
-  const content = currentItem?.attributes?.contenido || "No hay contenido";
-  const processedContent = remark()
-    .use(html)
-    .use(stringify)
-    .processSync(content)
-    .toString();
-  console.log(processedContent);
 
   return (
     <>

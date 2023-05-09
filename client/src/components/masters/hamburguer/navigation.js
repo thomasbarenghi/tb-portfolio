@@ -35,7 +35,7 @@ const items = [
   
 ];
 
-export const Navigation = () => (
+export const Navigation = ({toggle}) => (
   <motion.ul
     variants={variants}
     className="flex flex-col gap-9 px-8 pt-[100px] "
@@ -49,7 +49,7 @@ export const Navigation = () => (
       </motion.p>
 
       {items.map((item, index) => (
-        <MenuItem item={item} key={index} />
+        <MenuItem item={item} key={index} toggle={toggle} />
       ))}
     </div>
     <motion.div className="flex flex-col gap-0 " variants={variants2}>

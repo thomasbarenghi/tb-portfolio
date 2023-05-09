@@ -4,7 +4,7 @@ import { Provider } from "react-redux";
 import store, { persistor } from "@/redux/store/store";
 import { PersistGate } from "redux-persist/integration/react";
 import { Toaster } from "sonner";
-import { Element, scroller } from "react-scroll";
+
 import MouseFollower from "mouse-follower";
 import gsap from "gsap";
 import { useEffect, useState } from "react";
@@ -94,11 +94,11 @@ MouseFollower.registerGSAP(gsap);
               className: "max-w-[85vw] xs:max-w-none ",
             }}
           />
-          <Element name="targetElement">
+
             <Master>
               <Component {...pageProps} />
             </Master>
-          </Element>
+
           <Footer />
         </PersistGate>
       </Provider>
