@@ -104,6 +104,11 @@ const sidebar = {
     }, 800);
     };
 
+    const handleVisible = () => {
+    setVisible(false);
+    toggleOpen();
+    };
+
   return (
     <motion.nav
       initial={false}
@@ -124,7 +129,7 @@ const sidebar = {
           className="background fixed right-0 lg:left-0 top-0 h-screen w-[300px] bg-white shadow-xl "
           variants={isLgScreen ? sidebar : sidebarLg}
         >
-          <Navigation toggle={() => handleClose()} />
+          <Navigation toggle={() => handleVisible()} />
           {isOpen && <MenuToggle toggle={() => handleClose()} />}
         </motion.div>
       )}
