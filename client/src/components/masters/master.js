@@ -19,7 +19,22 @@ export default function Master({ children }) {
     delayedDispatch();
   }, [delayedDispatch]);
 
+  const delayedAlert = useMemo(
+    () =>
+      debounce((value) => {
+        toast("Esta web aun esta en desarrollo", {
+          style: {
+            background: "#ffedd5",
+            color: "#c2410c",
+          },
+        });
+      }, 1000),
+    []
+  );
 
+  useEffect(() => {
+    delayedAlert();
+  }, [delayedAlert]);
 
   return <div className="">{children}</div>;
 }

@@ -34,9 +34,12 @@ export default function Home() {
         <Hero sortedPosts={sortedPosts} />
         <SobreMi />
         <Habilidades />
+        <Portfolio sortedPosts={sortedPosts} />
+        <Line />
         <Resenas />
         <Line />
-        <Portfolio sortedPosts={sortedPosts} />
+        <Valores />
+        
       </Main>
     </>
   );
@@ -174,7 +177,7 @@ function Valores() {
           ¿Cuales son{" "}
           <span className=" text-4xl font-semibold ">mis valores?</span>
         </h1>
-        <div className="grid w-full grid-cols-2 gap-10">
+        <div className="grid w-full grid-cols-1 lg:grid-cols-2 gap-10">
           {valoresItems.map((item, index) => (
             <div
               key={index}
