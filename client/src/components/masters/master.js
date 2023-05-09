@@ -19,9 +19,7 @@ export default function Master({ children }) {
     delayedDispatch();
   }, [delayedDispatch]);
 
-  useEffect(() => {
-  toast("Este proyecto aun esta en desarrollo")
-  }, [])
+
 
   return <div className="">{children}</div>;
 }

@@ -36,7 +36,7 @@ function Quick() {
       {quickVisibility && (
         <AnimatePresence>
           <div
-            className="animate-slide-up bg-[#000000c7] fixed z-40 flex h-screen w-screen items-end justify-center pt-16 align-middle"
+            className="animate-slide-up bg-[#000000c7] fixed z-[1000] flex h-screen w-screen items-end justify-center pt-16 align-middle"
             style={{ background: "", top: 0, left: 0 }}
             id="overlay"
           >
