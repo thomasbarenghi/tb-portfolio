@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useSelector } from "react-redux";
 import { motion, AnimatePresence } from "framer-motion";
 import RenderContent from "@/utils/renderContent";
+import Link from "next/link";
 
 function Quick() {
   const currentItem = useSelector((state) => state.portfolio.currentItem);
@@ -25,24 +26,24 @@ function Quick() {
       {quickVisibility && (
         <AnimatePresence>
           <div
-            className="animate-slide-up bg-[#000000c7] fixed z-[1000] flex h-screen w-screen items-end justify-center pt-16 align-middle"
+            className="animate-slide-up fixed z-[1000] flex h-screen w-screen items-end justify-center bg-[#000000e5] pt-10 align-middle"
             style={{ background: "", top: 0, left: 0 }}
             id="overlay"
           >
             <div
               id="close"
-              className="absolute right-4 top-4 p-1 "
+              className="absolute right-4 top-3 p-1 "
               onClick={() => setQuickVisibility(false)}
             >
               <Image
-                width={20}
-                height={20}
+                width={12}
+                height={12}
                 alt={"close"}
                 src={"/icon/cross-white.svg"}
               />
             </div>
             <motion.div
-              className="relative flex h-full w-full justify-center overflow-y-scroll rounded-t-3xl bg-white  pt-14"
+              className="relative flex h-full w-full justify-center overflow-y-scroll rounded-t-[40px] bg-white  pt-16"
               id="content "
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
@@ -50,23 +51,36 @@ function Quick() {
               transition={{ duration: 0.6 }}
             >
               <div
-                className="relative  flex h-full  w-9/12 flex-col  "
+                className="relative   flex h-full w-full flex-col px-4 xs:px-8 lg:w-[70%] lg:px-0  "
                 id="container"
               >
                 <div id="content-inner" className="pb-14">
-                  <div className="mb-8 flex flex-row justify-between">
-                    <div className="text-start">
-                      <h1 className="text-2xl font-semibold">
+                  <div className="mb-8 flex flex-col items-start justify-between gap-4 lg:flex-row lg:items-center">
+                    <div className="flex flex-col gap-1 text-start w-full">
+                      <h1 className="text-3xl font-semibold">
                         {currentItem?.title}
                       </h1>
-                      <p className="text-sm">{currentItem?.completionDate}</p>
+                      <p className=" block text-start">
+                        {currentItem?.description}
+                      </p>
+                      {/* <p className="text-sm">Finalizacion: {currentItem?.completionDate}</p> */}
                     </div>
-                    <p
-                      className=" block text-start"
-                      style={{ maxWidth: "75%" }}
-                    >
-                      {currentItem?.description}
-                    </p>
+                    <div className="lg:max-width-[40%] flex lg:justify-end w-full gap-2 ">
+                      <Link href={currentItem?.deployLink}>
+                        {currentItem?.deployLink && (
+                          <button className="rounded-full bg-[#F24E1E] px-6 py-3 text-sm font-semibold text-white">
+                            Ver deploy
+                          </button>
+                        )}
+                      </Link>
+                      <Link href={currentItem?.deployLink}>
+                        {currentItem?.deployLink && (
+                          <button className="rounded-full border border-[#F24E1E] px-6 py-3 text-sm font-semibold text-[#F24E1E]">
+                            Ver Github
+                          </button>
+                        )}
+                      </Link>
+                    </div>
                   </div>
                   <div
                     className="relative mb-8  w-full items-start text-start"
@@ -79,7 +93,7 @@ function Quick() {
                       alt={currentItem?.title}
                     />
                   </div>
-                  <div>
+                  <div className="py-5 lg:py-10" id="content">
                     <RenderContent content={currentItem?.content} />
                   </div>
                 </div>

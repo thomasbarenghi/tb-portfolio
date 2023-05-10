@@ -39,7 +39,6 @@ export default function Home() {
         <Resenas />
         <Line />
         <Valores />
-        
       </Main>
     </>
   );
@@ -108,13 +107,27 @@ function SobreMi() {
         <span className="text-titulo1-semibold animate-pulse">❤️</span>
       </h1>
       <p className="text-base-light text-black">
-        Soy Thomas Barenghi, diseñador UX/UI y desarrollador web fullstack con
-        20 años de edad. Resido en Buenos Aires y quiero estudiar Desarrollo de
-        Software en UADE. Además, complemento mi formación en el bootcamp Soy
-        Henry, donde adquiriré más de 800 horas de experiencia y desarrollaré
-        proyectos prácticos. Me esfuerzo por combinar mis habilidades técnicas
-        con mi pasión por la creatividad para crear soluciones digitales
-        innovadoras y atractivas para el usuario.
+        Hola, soy Thomas Barenghi,{" "}
+        <b>diseñador UX/UI y desarrollador web fullstack</b> de 20 años que
+        reside en Buenos Aires. Desde los 12 años, tengo una gran pasión por la
+        tecnología y el desarrollo de software, lo que me llevó a comenzar mi
+        carrera autodidacta en programación y software low code.
+        <br />
+        Además de mi experiencia en el desarrollo de software, también soy
+        técnico electrónico con más de 2 años de experiencia. Esto me ha
+        brindado habilidades transferibles importantes, como el análisis, la
+        resolución de conflictos y el trabajo en equipo. También tuve la
+        oportunidad de participar en un{" "}
+        <b>programa inHouse de inteligencia artificial de ScaleAI</b>, donde
+        analicé sensores lidar.
+        <br />
+        Recientemente,{" "}
+        <b>
+          me gradué del bootcamp Soy Henry, donde adquirí más de 800 horas de
+          experiencia
+        </b>{" "}
+        y desarrollé varios proyectos prácticos, que te invito a conocer en la
+        pagina de “Proyectos” de mi web.
       </p>
     </section>
   );
@@ -132,16 +145,18 @@ function Habilidades() {
             Mis <span className=" text-4xl font-semibold ">habilidades </span>
             🤖🤯
           </h1>
-          <p className="mb-6 text-start text-black">
-            He creado aplicaciones y sitios web innovadores y atractivos, y he
-            trabajado en proyectos desafiantes tanto en el desarrollo front-end
-            como en el back-end. Soy apasionado por la tecnología y siempre
-            estoy buscando maneras de mejorar mis habilidades y aprender nuevas
-            tecnologías. Me siento cómodo trabajando en diferentes entornos y
-            plataformas, y estoy emocionado por lo que puedo crear en el futuro
-            con mis habilidades en programación web.
+          <p className="mb-4 text-start text-black">
+            Trabajé en más de 10 proyectos de desarrollo de software, que
+            incluyen proyectos fullstack, CMS, low code, electrónica y domótica.
+            Como líder de equipo, <b>he dirigido equipos de más de 5 personas y
+            siempre me he adaptado satisfactoriamente a diferentes entornos y
+            personas.</b> Estas experiencias me han enseñado la importancia de la
+            comunicación clara y efectiva, la planificación cuidadosa, y el
+            trabajo en equipo para lograr un proyecto exitoso. Además, tengo una
+            actitud positiva y proactiva, lo que me permite enfrentar desafíos
+            con confianza y creatividad.
           </p>
-          <div className="flex w-full flex-row flex-wrap justify-start gap-4">
+          <div className="flex w-full flex-row flex-wrap justify-start gap-2">
             {tecnologias.map((tecnologia, index) => (
               <div
                 whileHover={{ y: -15 }}
@@ -177,7 +192,7 @@ function Valores() {
           ¿Cuales son{" "}
           <span className=" text-4xl font-semibold ">mis valores?</span>
         </h1>
-        <div className="grid w-full grid-cols-1 lg:grid-cols-2 gap-10">
+        <div className="grid w-full grid-cols-1 gap-10 lg:grid-cols-2">
           {valoresItems.map((item, index) => (
             <div
               key={index}

@@ -102,8 +102,12 @@ html {
 }
 
 /*Weight */
-h1,
-h2,
+h1, h2 {
+  @apply font-normal;
+  color: black;
+  line-height: 130%;
+}
+
 h3 {
   line-height: 130%;
   @apply font-light;

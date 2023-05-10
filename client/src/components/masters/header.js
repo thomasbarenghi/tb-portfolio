@@ -46,8 +46,12 @@ export default function Header() {
           />
         </Link>
         <div className="hidden flex-row items-center justify-between gap-2 lg:flex">
-          <ReactSVG src="/icon/instagram.svg" className="h-[30px] w-[30px] " />
-          <ReactSVG src="/icon/linkedin.svg" className="h-[30px] w-[30px] " />
+          <Link href="https://github.com/thomasbarenghi">
+          <ReactSVG src="/icon/github.svg" className="h-[30px] w-[30px] cursor-pointer " />
+          </Link>
+          <Link href="https://www.linkedin.com/in/thomasbarenghi/">
+          <ReactSVG src="/icon/linkedin.svg" className="h-[30px] w-[30px] cursor-pointer " />
+          </Link>
         </div>
       </div>
     </header>

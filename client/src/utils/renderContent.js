@@ -22,9 +22,9 @@ export default function RenderContent({ content }) {
       <img
         src={urlFor(value.asset._ref)
           .image(value)
-          .width(isInline ? 100 : 800)
-          .fit("max")
-          .auto("format")
+          //  .width(isInline ? 100 : 800)
+          //.fit("max")
+          //.auto("format")
           .url()}
         alt={value.alt || " "}
         loading="lazy"
@@ -33,20 +33,35 @@ export default function RenderContent({ content }) {
           display: isInline ? "inline-block" : "block",
 
           // Avoid jumping around with aspect-ratio CSS property
-          aspectRatio: width / height,
+          // aspectRatio: width / height,
         }}
+        className="aspect-[4/3] w-full rounded-3xl object-cover "
       />
+    );
+  };
+
+  const SampleBlockComponent = ({ value }) => {
+    return (
+      // hacemos un style responsive para que se vea bien en mobile
+      <div className="text-start" style={{ width: "95%", maxWidth: "95%" }}>
+        <PortableText value={value} />
+      </div>
     );
   };
 
   const components = {
     types: {
       image: SampleImageComponent,
+      block: SampleBlockComponent,
       // Any other custom types you have in your content
       // Examples: mapLocation, contactForm, code, featuredProjects, latestNews, etc.
     },
   };
 
   console.log("renderContent", content);
-  return <PortableText value={content} components={components} />;
+  return (
+    <div className="flex w-full flex-col items-center justify-center">
+      <PortableText value={content} components={components} />
+    </div>
+  );
 }
