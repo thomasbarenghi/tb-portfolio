@@ -73,8 +73,8 @@ function Quick() {
                           </button>
                         )}
                       </Link>
-                      <Link href={currentItem?.deployLink}>
-                        {currentItem?.deployLink && (
+                      <Link href={currentItem?.githubLink}>
+                        {currentItem?.githubLink && (
                           <button className="rounded-full border border-[#F24E1E] px-6 py-3 text-sm font-semibold text-[#F24E1E]">
                             Ver Github
                           </button>
