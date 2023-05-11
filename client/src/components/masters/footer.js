@@ -27,6 +27,7 @@ export default function Footer() {
                 thomasbarenghi@gmail.com
               </p>
             </div>
+            <Link href="https://www.linkedin.com/in/thomasbarenghi/">
             <div className="flex flex-row items-center gap-2">
               <NextImage
                 src="/icon/linkedin.svg"
@@ -38,6 +39,7 @@ export default function Footer() {
                 /in/thomasbarenghi
               </p>
             </div>
+            </Link>
           </div>
         </div>
       </div>

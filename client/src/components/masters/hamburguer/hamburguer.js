@@ -118,7 +118,7 @@ const sidebar = {
     >
       <ReactSVG
         src="/icon/menu.svg"
-        className={`h-[30px] w-[30px] cursor-pointer fill-current ${mode === "white" ? "text-white" : "text-[#FFC3B1] " }`}
+        className={`  cursor-pointer fill-current ${mode === "white" ? "text-white" : "text-[#FFC3B1] " }`}
         onClick={() => {
           handleOpen();
         }}
@@ -130,6 +130,7 @@ const sidebar = {
           variants={isLgScreen ? sidebar : sidebarLg}
         >
           <Navigation toggle={() => handleVisible()} />
+
           {isOpen && <MenuToggle toggle={() => handleClose()} />}
         </motion.div>
       )}
