@@ -113,13 +113,10 @@ function SobreMi() {
         <b>diseñador UX/UI y desarrollador web fullstack</b> de 20 años que
         reside en Buenos Aires. Desde los 12 años, tengo una gran pasión por la
         tecnología y el desarrollo de software, lo que me llevó a comenzar mi
-        carrera autodidacta en programación y software low code. Además de mi
-        experiencia en el desarrollo de software, también soy técnico
-        electrónico con más de 2 años de experiencia. Esto me ha brindado
-        habilidades transferibles importantes, como el análisis, la resolución
-        de conflictos y el trabajo en equipo.
-        <br />
-        Tuve la oportunidad de participar en un{" "}
+        carrera autodidacta en programación y software low code. Además, como
+        técnico electrónico con más de 2 años de experiencia obtuve habilidades
+        transferibles, como el análisis, la resolución de conflictos y el
+        trabajo en equipo. Tuve la oportunidad de participar en un{" "}
         <b>programa inHouse de inteligencia artificial de ScaleAI</b>, donde
         analicé sensores lidar, ademas, recientemente,{" "}
         <b>
