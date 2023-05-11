@@ -5,7 +5,7 @@ export default function PortfolioGrid({ items }) {
     <>
       <Quick />
       <div
-        className=" grid h-auto min-w-full max-w-[100vh] grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-4 "
+        className=" grid h-auto min-w-full max-w-[100vh] grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-x-6 lg:gap-y-10 "
         //animacion desde la derecha
       >
         {items?.map((item) => (

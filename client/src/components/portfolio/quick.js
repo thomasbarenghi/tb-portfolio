@@ -65,21 +65,25 @@ function Quick() {
                       </p>
                       {/* <p className="text-sm">Finalizacion: {currentItem?.completionDate}</p> */}
                     </div>
-                    <div className="lg:max-width-[40%] flex lg:justify-end w-full gap-2 ">
+                    <div className="lg:max-width-[30%] lg:w-max flex lg:justify-end w-full gap-2 ">
+                    {currentItem?.deployLink && (
                       <Link href={currentItem?.deployLink}>
-                        {currentItem?.deployLink && (
-                          <button className="rounded-full bg-[#F24E1E] px-6 py-3 text-sm font-semibold text-white">
+                       
+                          <button className="rounded-full whitespace-nowrap bg-[#F24E1E] px-6 py-3 text-sm font-semibold text-white">
                             Ver deploy
                           </button>
-                        )}
+                        
                       </Link>
+                      )}
+                      {currentItem?.githubLink && (
                       <Link href={currentItem?.githubLink}>
-                        {currentItem?.githubLink && (
-                          <button className="rounded-full border border-[#F24E1E] px-6 py-3 text-sm font-semibold text-[#F24E1E]">
+                        
+                          <button className="rounded-full border whitespace-nowrap border-[#F24E1E] px-6 py-3 text-sm font-semibold text-[#F24E1E]">
                             Ver Github
                           </button>
-                        )}
+                        
                       </Link>
+                      )}
                     </div>
                   </div>
                   <div

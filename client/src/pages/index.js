@@ -5,11 +5,13 @@ import { useSelector } from "react-redux";
 import { tecnologias, resenasItems, valoresItems } from "@/data/data";
 import { motion, AnimatePresence } from "framer-motion";
 import Masonry from "react-masonry-css";
+import Link from "next/link";
 
 export default function Home() {
   const items = useSelector((state) => state?.portfolio?.items);
 
   const sortedPosts = items
+    .filter((item) => item.featured)
     .slice()
     .sort((a, b) => {
       // Convertimos las fechas a objetos Date
@@ -19,7 +21,7 @@ export default function Home() {
       // Comparamos las fechas y retornamos el resultado de la comparación
       return dateB.getTime() - dateA.getTime();
     })
-    .slice(0, 6);
+    .slice(0, 4);
 
   console.log(items);
 
@@ -111,17 +113,15 @@ function SobreMi() {
         <b>diseñador UX/UI y desarrollador web fullstack</b> de 20 años que
         reside en Buenos Aires. Desde los 12 años, tengo una gran pasión por la
         tecnología y el desarrollo de software, lo que me llevó a comenzar mi
-        carrera autodidacta en programación y software low code.
+        carrera autodidacta en programación y software low code. Además de mi
+        experiencia en el desarrollo de software, también soy técnico
+        electrónico con más de 2 años de experiencia. Esto me ha brindado
+        habilidades transferibles importantes, como el análisis, la resolución
+        de conflictos y el trabajo en equipo.
         <br />
-        Además de mi experiencia en el desarrollo de software, también soy
-        técnico electrónico con más de 2 años de experiencia. Esto me ha
-        brindado habilidades transferibles importantes, como el análisis, la
-        resolución de conflictos y el trabajo en equipo. También tuve la
-        oportunidad de participar en un{" "}
+        Tuve la oportunidad de participar en un{" "}
         <b>programa inHouse de inteligencia artificial de ScaleAI</b>, donde
-        analicé sensores lidar.
-        <br />
-        Recientemente,{" "}
+        analicé sensores lidar, ademas, recientemente,{" "}
         <b>
           me gradué del bootcamp Soy Henry, donde adquirí más de 800 horas de
           experiencia
@@ -148,13 +148,16 @@ function Habilidades() {
           <p className="mb-4 text-start text-black">
             Trabajé en más de 10 proyectos de desarrollo de software, que
             incluyen proyectos fullstack, CMS, low code, electrónica y domótica.
-            Como líder de equipo, <b>he dirigido equipos de más de 5 personas y
-            siempre me he adaptado satisfactoriamente a diferentes entornos y
-            personas.</b> Estas experiencias me han enseñado la importancia de la
-            comunicación clara y efectiva, la planificación cuidadosa, y el
-            trabajo en equipo para lograr un proyecto exitoso. Además, tengo una
-            actitud positiva y proactiva, lo que me permite enfrentar desafíos
-            con confianza y creatividad.
+            Como líder de equipo,{" "}
+            <b>
+              he dirigido equipos de más de 5 personas y siempre me he adaptado
+              satisfactoriamente a diferentes entornos y personas.
+            </b>{" "}
+            Estas experiencias me han enseñado la importancia de la comunicación
+            clara y efectiva, la planificación cuidadosa, y el trabajo en equipo
+            para lograr un proyecto exitoso. Además, tengo una actitud positiva
+            y proactiva, lo que me permite enfrentar desafíos con confianza y
+            creatividad.
           </p>
           <div className="flex w-full flex-row flex-wrap justify-start gap-2">
             {tecnologias.map((tecnologia, index) => (
@@ -226,16 +229,21 @@ function Portfolio({ sortedPosts }) {
         transition={{ duration: 0.2 }}
       >
         <div
-          className="flex flex-col items-start justify-start gap-1 "
+          className="flex w-full flex-row items-start justify-between gap-1 "
           //animacion desde la izquierda
           initial={{ x: "-100%" }}
           animate={{ x: 0 }}
           transition={{ duration: 0.6 }}
         >
           <h1 className="w-full text-start">
-            Mis proyectos{" "}
-            <span className=" text-4xl font-semibold ">destacados 🙌</span>
+            Proyectos{" "}
+            <span className=" text-4xl font-semibold ">destacados</span>
           </h1>
+          <Link href="/work">
+            <button className="whitespace-nowrap rounded-full bg-[#F24E1E] px-6 py-3 text-sm font-semibold text-white">
+              Ver todo
+            </button>
+          </Link>
         </div>
       </div>
       <PortfolioGrid items={sortedPosts} />
