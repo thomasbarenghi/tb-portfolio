@@ -59,6 +59,12 @@ export default {
         }
       ]
     },
+    {
+name: "featured",
+type: "boolean",
+title: "Featured",
+description: "Is this project featured?"
+    },
     // {
     //   name: 'content',
     //   type: 'array',

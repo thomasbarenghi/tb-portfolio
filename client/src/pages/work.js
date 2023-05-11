@@ -19,7 +19,7 @@ export default function Home() {
       // Comparamos las fechas y retornamos el resultado de la comparación
       return dateB.getTime() - dateA.getTime();
     })
-    .slice(0, 6);
+    
 
   console.log(items);
 
