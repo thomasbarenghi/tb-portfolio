@@ -32,9 +32,9 @@ export default function Master({ children }) {
     []
   );
 
-  useEffect(() => {
-    delayedAlert();
-  }, [delayedAlert]);
+  // useEffect(() => {
+  //   delayedAlert();
+  // }, [delayedAlert]);
 
   return <div className="">{children}</div>;
 }

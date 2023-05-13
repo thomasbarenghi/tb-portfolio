@@ -86,7 +86,7 @@ function Hero({ sortedPosts }) {
 
       <div className="absolute left-0 top-0 z-[-1] h-full  w-full bg-black">
         <Image
-          src="/image/demo6.jpg"
+          src="/image/demo6.webp"
           alt="hero"
           layout="fill"
           objectFit="cover"
