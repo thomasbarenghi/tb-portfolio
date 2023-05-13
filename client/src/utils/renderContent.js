@@ -2,6 +2,7 @@ import { PortableText } from "@portabletext/react";
 import { getImageDimensions } from "@sanity/asset-utils";
 import imageUrlBuilder from "@sanity/image-url";
 import sanityClient from "@sanity/client";
+import Image from "next/image";
 
 export default function RenderContent({ content }) {
   const client = sanityClient({
@@ -19,7 +20,8 @@ export default function RenderContent({ content }) {
     const { width, height } = getImageDimensions(value);
     console.log("value", value);
     return (
-      <img
+      <div className="relative w-full h-full">
+      <Image
         src={urlFor(value.asset._ref)
           .image(value)
           //  .width(isInline ? 100 : 800)
@@ -37,6 +39,7 @@ export default function RenderContent({ content }) {
         }}
         className="aspect-[4/3] w-full rounded-3xl object-cover "
       />
+      </div>
     );
   };
 
