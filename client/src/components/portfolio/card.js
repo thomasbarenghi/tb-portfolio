@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 export default function PortfolioCard({ item }) {
   const dispatch = useDispatch();
   const handleCardClick = () => {
-    console.log("handleCardClick", item);
+
     dispatch(setCurrentItem(item));
     //
     //console.log("handleCardClick", item.id);

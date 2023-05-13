@@ -21,7 +21,7 @@ export default function Home() {
     })
     .slice(0, 6);
 
-  console.log(items);
+
 
   return (
     <>

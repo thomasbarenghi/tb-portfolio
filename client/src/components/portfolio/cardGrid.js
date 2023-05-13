@@ -8,7 +8,7 @@ export default function CardGrid({ item }) {
   const dispatch = useDispatch();
 
   const handleCardClick = () => {
-    console.log("handleCardClick", item);
+
     dispatch(setCurrentItem(item));
     quickVisibilityExternal();
   };

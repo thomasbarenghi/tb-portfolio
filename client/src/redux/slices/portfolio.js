@@ -47,7 +47,7 @@ const portfolioSlice = createSlice({
   initialState,
   reducers: {
     setCurrentItem(state, action) {
-      console.log("setCurrentItem", action.payload);
+     
       state.currentItem = action.payload;
     },
   },

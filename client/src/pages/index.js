@@ -23,7 +23,7 @@ export default function Home() {
     })
     .slice(0, 4);
 
-  console.log(items);
+
 
   return (
     <>

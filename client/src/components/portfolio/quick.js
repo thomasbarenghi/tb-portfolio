@@ -9,13 +9,13 @@ import Link from "next/link";
 function Quick() {
   const currentItem = useSelector((state) => state.portfolio.currentItem);
 
-  console.log("activeItem", currentItem);
+
 
   const [quickVisibility, setQuickVisibility] = useState(false);
   const handleVisibilityRef = useRef(() => {});
 
   handleVisibilityRef.current = () => {
-    console.log("handleVisibility dentro de Quick");
+
     setQuickVisibility(!quickVisibility);
   };
 
@@ -114,7 +114,7 @@ function Quick() {
 Quick.handleVisibility = () => {};
 
 export const quickVisibilityExternal = () => {
-  console.log("quickVisibilityExternal");
+
   Quick.handleVisibility();
 };
 

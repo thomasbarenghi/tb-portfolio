@@ -18,7 +18,7 @@ export default function RenderContent({ content }) {
 
   const SampleImageComponent = ({ value, isInline }) => {
     const { width, height } = getImageDimensions(value);
-    console.log("value", value);
+
     return (
       <div className="relative w-full h-full">
       <Image
@@ -61,7 +61,7 @@ export default function RenderContent({ content }) {
     },
   };
 
-  console.log("renderContent", content);
+
   return (
     <div className="flex w-full flex-col items-center justify-center">
       <PortableText value={content} components={components} />
