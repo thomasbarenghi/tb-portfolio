@@ -90,6 +90,7 @@ function Hero({ sortedPosts }) {
           alt="hero"
           layout="fill"
           objectFit="cover"
+          priority
         />
       </div>
       <div className="absolute left-0 top-0 z-[0] h-full w-full bg-black opacity-70 "></div>
