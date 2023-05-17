@@ -9,3 +9,4 @@ export { default as CardGrid } from "./portfolio/cardGrid";
 export { default as PortfolioGrid } from "./portfolio/portfolioGrid";
 export { quickVisibilityExternal } from "./portfolio/quick";
 export { default as Hamburguer } from "./masters/hamburguer/hamburguer";
+export { default as Popup } from "./masters/popup";
