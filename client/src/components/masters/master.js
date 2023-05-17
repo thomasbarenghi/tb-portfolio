@@ -12,7 +12,7 @@ export default function Master({ children }) {
   const delayedDispatch = useMemo(
     () =>
       debounce((value) => {
-        setPopup(true);
+        dispatch(getPortfolioItems());
       }, 1000),
     [dispatch]
   );
