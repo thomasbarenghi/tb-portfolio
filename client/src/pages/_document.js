@@ -23,6 +23,21 @@ export default function Document() {
           `,
           }}
         />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-207Q5MBB1E');
+    `,
+          }}
+        />
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-207Q5MBB1E"
+        ></script>
       </Head>
       <body>
         <Main />
