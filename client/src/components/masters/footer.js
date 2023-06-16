@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="padding-x-estilo2 py-24 ">
         <div className="flex flex-col justify-center items-center rounded-[40px]  ">
           <h1 className="w-full text-center font-medium">
-            ¿Tenes algo{" "}
+            ¿Tenés algo{" "}
             <span className="text-titulo1-semibold text-4xl text-[#F24E1E] ">
               en mente?
             </span>
