@@ -9,13 +9,18 @@ import Link from "next/link";
 function Quick() {
   const currentItem = useSelector((state) => state.portfolio.currentItem);
 
-
-
   const [quickVisibility, setQuickVisibility] = useState(false);
   const handleVisibilityRef = useRef(() => {});
 
-  handleVisibilityRef.current = () => {
+  useEffect(() => {
+    if (quickVisibility) {
+      document.body.classList.add("no-scroll");
+    } else {
+      document.body.classList.remove("no-scroll");
+    }
+  }, [quickVisibility]);
 
+  handleVisibilityRef.current = () => {
     setQuickVisibility(!quickVisibility);
   };
 
@@ -43,7 +48,7 @@ function Quick() {
               />
             </div>
             <motion.div
-              className="relative flex h-full w-full justify-center overflow-y-scroll rounded-t-[40px] bg-white  pt-16"
+              className="relative flex h-full w-full justify-center  rounded-t-[40px] bg-white  pt-16"
               id="content "
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
@@ -51,12 +56,12 @@ function Quick() {
               transition={{ duration: 0.6 }}
             >
               <div
-                className="relative   flex h-full w-full flex-col px-4 xs:px-8 lg:w-[70%] lg:px-0  "
+                className="relative flex   h-full w-full flex-col overflow-y-scroll px-4 xs:px-8 lg:w-[70%] lg:px-0  "
                 id="container"
               >
                 <div id="content-inner" className="pb-14">
                   <div className="mb-8 flex flex-col items-start justify-between gap-4 lg:flex-row lg:items-center">
-                    <div className="flex flex-col gap-1 text-start w-full">
+                    <div className="flex w-full flex-col gap-1 text-start">
                       <h1 className="text-3xl font-semibold">
                         {currentItem?.title}
                       </h1>
@@ -65,24 +70,20 @@ function Quick() {
                       </p>
                       {/* <p className="text-sm">Finalizacion: {currentItem?.completionDate}</p> */}
                     </div>
-                    <div className="lg:max-width-[30%] lg:w-max flex lg:justify-end w-full gap-2 ">
-                    {currentItem?.deployLink && (
-                      <Link href={currentItem?.deployLink}>
-                       
-                          <button className="rounded-full whitespace-nowrap bg-[#F24E1E] px-6 py-3 text-sm font-semibold text-white">
+                    <div className="lg:max-width-[30%] flex w-full gap-2 lg:w-max lg:justify-end ">
+                      {currentItem?.deployLink && (
+                        <Link href={currentItem?.deployLink}>
+                          <button className="whitespace-nowrap rounded-full bg-[#F24E1E] px-6 py-3 text-sm font-semibold text-white">
                             Ver deploy
                           </button>
-                        
-                      </Link>
+                        </Link>
                       )}
                       {currentItem?.githubLink && (
-                      <Link href={currentItem?.githubLink}>
-                        
-                          <button className="rounded-full border whitespace-nowrap border-[#F24E1E] px-6 py-3 text-sm font-semibold text-[#F24E1E]">
+                        <Link href={currentItem?.githubLink}>
+                          <button className="whitespace-nowrap rounded-full border border-[#F24E1E] px-6 py-3 text-sm font-semibold text-[#F24E1E]">
                             Ver Github
                           </button>
-                        
-                      </Link>
+                        </Link>
                       )}
                     </div>
                   </div>
@@ -114,7 +115,6 @@ function Quick() {
 Quick.handleVisibility = () => {};
 
 export const quickVisibilityExternal = () => {
-
   Quick.handleVisibility();
 };
 

@@ -20,7 +20,7 @@ export default function RenderContent({ content }) {
     const { width, height } = getImageDimensions(value);
 
     return (
-      <div className="relative w-full h-full">
+      <div className="relative w-full aspect-[4/3] h-full">
       <Image
         src={urlFor(value.asset._ref)
           .image(value)
@@ -30,6 +30,7 @@ export default function RenderContent({ content }) {
           .url()}
         alt={value.alt || " "}
         loading="lazy"
+        fill={true}
         style={{
           // Display alongside text if image appears inside a block text span
           display: isInline ? "inline-block" : "block",
