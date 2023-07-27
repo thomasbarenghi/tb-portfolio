@@ -108,7 +108,7 @@ export const resenasItems = [
   },
   {
     author: "Valentin Dealbera",
-    position: "Compañero en Henry | Desarrollador Fullstack",
+    position: "Compañero en Henry | Desarrollador Fullstack en Avature",
     picture: "/image/resenas/valentin.png",
     text: "Muy buen compañero y programador, muy buena resolucion de problemas y creatividad de soluciones.",
   },

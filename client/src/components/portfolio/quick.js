@@ -102,7 +102,28 @@ function Quick() {
                       alt={currentItem?.title}
                     />
                   </div>
-                  <div className="py-5 lg:py-10" id="content">
+                  <div className="flex flex-col gap-2 px-2 sm:px-3 md:px-5" >
+                    <h2 className="text-xl font-semibold">Tecnologias</h2>
+                    <div className="flex flex-col lg:grid lg:grid-cols-3 align-middle gap-2">
+                      <p className="text-base">
+                        {" "}
+                        <span className="font-medium">Frontend:</span>{" "}
+                        {currentItem?.frontTecnologies}
+                      </p>
+                      <p className="text-base">
+                        {" "}
+                        <span className="font-medium">Backend:</span>{" "}
+                        {currentItem?.backTecnologies}
+                      </p>
+                      <p className="text-base">
+                        {" "}
+                        <span className="font-medium">Database:</span>{" "}
+                        {currentItem?.databaseTecnologies}
+                      </p>
+                    </div>
+                  </div>
+                  <hr className="my-8 lg:my-8 mx-2 sm:mx-3 md:mx-5" />
+                  <div className="" id="content">
                     <RenderContent content={currentItem?.content} />
                   </div>
                 </div>

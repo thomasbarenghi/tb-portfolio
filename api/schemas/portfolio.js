@@ -1,4 +1,3 @@
-// schemas/portfolio.js
 export default {
   name: 'portfolio',
   type: 'document',
@@ -7,12 +6,12 @@ export default {
     {
       name: 'coverImage',
       type: 'image',
-      title: 'Cover Image'
+      title: 'Cover Image',
     },
     {
       name: 'mainImage',
       type: 'image',
-      title: 'Main Image'
+      title: 'Main Image',
     },
     {
       name: 'gallery',
@@ -20,34 +19,49 @@ export default {
       title: 'Gallery',
       of: [
         {
-          type: 'image'
-        }
-      ]
+          type: 'image',
+        },
+      ],
     },
     {
       name: 'title',
       type: 'string',
-      title: 'Title'
+      title: 'Title',
+    },
+    {
+      name: 'frontTecnologies',
+      type: 'string',
+      title: 'Frontend Technologies',
+    },
+    {
+      name: 'backTecnologies',
+      type: 'string',
+      title: 'Backend Technologies',
+    },
+    {
+      name: 'databaseTecnologies',
+      type: 'string',
+      title: 'Database Technologies',
     },
     {
       name: 'completionDate',
       type: 'date',
-      title: 'Completion Date'
+      title: 'Completion Date',
     },
     {
       name: 'description',
       type: 'text',
-      title: 'Description'
+      title: 'Description',
     },
     {
       name: 'deployLink',
       type: 'url',
-      title: 'Deploy Link'
+      title: 'Deploy Link',
     },
     {
       name: 'githubLink',
       type: 'url',
-      title: 'GitHub Link'
+      title: 'GitHub Link',
     },
     {
       name: 'technologiesUsed',
@@ -55,15 +69,15 @@ export default {
       title: 'Technologies Used',
       of: [
         {
-          type: 'string'
-        }
-      ]
+          type: 'string',
+        },
+      ],
     },
     {
-name: "featured",
-type: "boolean",
-title: "Featured",
-description: "Is this project featured?"
+      name: 'featured',
+      type: 'boolean',
+      title: 'Featured',
+      description: 'Is this project featured?',
     },
     // {
     //   name: 'content',
@@ -90,17 +104,16 @@ description: "Is this project featured?"
                 type: 'image',
                 title: 'Image',
                 options: {
-                  hotspot: true // Esta opción permite que se recorten las imágenes al tamaño deseado
-                }
-              }
-            ]
-          }
+                  hotspot: true, // Esta opción permite que se recorten las imágenes al tamaño deseado
+                },
+              },
+            ],
+          },
         },
         {
-          type: 'image'
-        }
-      ]
-    }
-  ]
+          type: 'image',
+        },
+      ],
+    },
+  ],
 }
-
