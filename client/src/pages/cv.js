@@ -9,10 +9,10 @@ export default function CV() {
   }, []);
 
   const handleDownload = () => {
-  router.push("/pdf/cv.pdf");
+    router.push("/pdf/cv.pdf");
   };
 
   return (
-    <div className="z-[10000] absolute top-0 left-0 w-screen h-screen bg-white"></div>
+    <div className="absolute left-0 top-0 z-[10000] h-screen w-screen bg-white"></div>
   );
 }

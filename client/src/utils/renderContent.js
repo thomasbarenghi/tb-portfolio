@@ -20,26 +20,26 @@ export default function RenderContent({ content }) {
     const { width, height } = getImageDimensions(value);
 
     return (
-      <div className="relative w-full aspect-[4/3] h-full">
-      <Image
-        src={urlFor(value.asset._ref)
-          .image(value)
-          //  .width(isInline ? 100 : 800)
-          //.fit("max")
-          //.auto("format")
-          .url()}
-        alt={value.alt || " "}
-        loading="lazy"
-        fill={true}
-        style={{
-          // Display alongside text if image appears inside a block text span
-          display: isInline ? "inline-block" : "block",
+      <div className="relative aspect-[4/3] h-full w-full">
+        <Image
+          src={urlFor(value.asset._ref)
+            .image(value)
+            //  .width(isInline ? 100 : 800)
+            //.fit("max")
+            //.auto("format")
+            .url()}
+          alt={value.alt || " "}
+          loading="lazy"
+          fill={true}
+          style={{
+            // Display alongside text if image appears inside a block text span
+            display: isInline ? "inline-block" : "block",
 
-          // Avoid jumping around with aspect-ratio CSS property
-          // aspectRatio: width / height,
-        }}
-        className="aspect-[4/3] w-full rounded-3xl object-cover "
-      />
+            // Avoid jumping around with aspect-ratio CSS property
+            // aspectRatio: width / height,
+          }}
+          className="aspect-[4/3] w-full rounded-3xl object-cover "
+        />
       </div>
     );
   };
@@ -61,7 +61,6 @@ export default function RenderContent({ content }) {
       // Examples: mapLocation, contactForm, code, featuredProjects, latestNews, etc.
     },
   };
-
 
   return (
     <div className="flex w-full flex-col items-center justify-center">

@@ -8,7 +8,6 @@ export default function CardGrid({ item }) {
   const dispatch = useDispatch();
 
   const handleCardClick = () => {
-
     dispatch(setCurrentItem(item));
     quickVisibilityExternal();
   };
@@ -25,13 +24,16 @@ export default function CardGrid({ item }) {
         }}
       >
         <AnimatePresence>
-          <motion.div className="deslizante h-full w-full flex flex-col gap-4 " whileHover={{ scale: 0.95 }}>
+          <motion.div
+            className="deslizante flex h-full w-full flex-col gap-4 "
+            whileHover={{ scale: 0.95 }}
+          >
             <div className="relative aspect-[4/3] h-full w-full ">
               <NextImage
                 src={item?.coverImage}
                 alt={item.title}
                 layout="fill"
-                className="rounded-3xl w-full h-full aspect-[4/3] object-cover  "
+                className="aspect-[4/3] h-full w-full rounded-3xl object-cover  "
               />
             </div>
             <div className="flex flex-col">

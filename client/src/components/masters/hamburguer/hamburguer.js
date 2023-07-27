@@ -27,46 +27,42 @@ import { useMediaQuery } from "@chakra-ui/react";
 //   },
 // };
 
-
-
-
-
-export const Hamburguer = ({mode}) => {
+export const Hamburguer = ({ mode }) => {
   const [isOpen, toggleOpen] = useCycle(false, true);
   const [visible, setVisible] = useState(false);
   const containerRef = useRef(null);
   const { height } = useDimensions(containerRef);
-//Averiguamos si es una pantalla mayor a 1024px
+  //Averiguamos si es una pantalla mayor a 1024px
 
-const [isLgScreen, setIsLgScreen] = useState(false);
+  const [isLgScreen, setIsLgScreen] = useState(false);
 
-useEffect(() => {
-  if(window.innerWidth > 1024){
-    setIsLgScreen(true);
-  }else{
-    setIsLgScreen(false);
-  }
-}, []);
+  useEffect(() => {
+    if (window.innerWidth > 1024) {
+      setIsLgScreen(true);
+    } else {
+      setIsLgScreen(false);
+    }
+  }, []);
 
-const sidebar = {
-  open: (height = 1000) => ({
-    clipPath: `circle(${height * 2 + 200}px at 40px 40px)`,
-    transition: {
-      type: "spring",
-      stiffness: 20,
-      restDelta: 2,
+  const sidebar = {
+    open: (height = 1000) => ({
+      clipPath: `circle(${height * 2 + 200}px at 40px 40px)`,
+      transition: {
+        type: "spring",
+        stiffness: 20,
+        restDelta: 2,
+      },
+    }),
+    closed: {
+      clipPath: "circle(30px at 40px 40px)",
+      transition: {
+        delay: 0.5,
+        type: "spring",
+        stiffness: 400,
+        damping: 40,
+      },
     },
-  }),
-  closed: {
-    clipPath: "circle(30px at 40px 40px)",
-    transition: {
-      delay: 0.5,
-      type: "spring",
-      stiffness: 400,
-      damping: 40,
-    },
-  },
-};
+  };
 
   const sidebarLg = {
     open: (height = 1000) => ({
@@ -92,22 +88,21 @@ const sidebar = {
   const handleOpen = () => {
     setVisible(true);
     setTimeout(() => {
-        toggleOpen();
+      toggleOpen();
     }, 20);
-    };
+  };
 
-    const handleClose = () => {
-    
+  const handleClose = () => {
     toggleOpen();
     setTimeout(() => {
-        setVisible(false);
+      setVisible(false);
     }, 800);
-    };
+  };
 
-    const handleVisible = () => {
+  const handleVisible = () => {
     setVisible(false);
     toggleOpen();
-    };
+  };
 
   return (
     <motion.nav
@@ -118,7 +113,9 @@ const sidebar = {
     >
       <ReactSVG
         src="/icon/menu.svg"
-        className={`  cursor-pointer fill-current ${mode === "white" ? "text-white" : "text-[#FFC3B1] " }`}
+        className={`  cursor-pointer fill-current ${
+          mode === "white" ? "text-white" : "text-[#FFC3B1] "
+        }`}
         onClick={() => {
           handleOpen();
         }}
@@ -126,7 +123,7 @@ const sidebar = {
       {visible && (
         <motion.div
           id="okok"
-          className="background fixed right-0 lg:left-0 top-0 h-screen w-[300px] bg-white shadow-xl "
+          className="background fixed right-0 top-0 h-screen w-[300px] bg-white shadow-xl lg:left-0 "
           variants={isLgScreen ? sidebar : sidebarLg}
         >
           <Navigation toggle={() => handleVisible()} />
@@ -139,8 +136,6 @@ const sidebar = {
 };
 
 export default Hamburguer;
-
-
 
 // export const Hamburguer = ({mode}) => {
 //   const [isOpen, toggleOpen] = useCycle(false, true);

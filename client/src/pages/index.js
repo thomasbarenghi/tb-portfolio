@@ -23,8 +23,6 @@ export default function Home() {
     })
     .slice(0, 4);
 
-
-
   return (
     <>
       <Head>

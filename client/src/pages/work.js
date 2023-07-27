@@ -9,19 +9,14 @@ import Masonry from "react-masonry-css";
 export default function Home() {
   const items = useSelector((state) => state?.portfolio?.items);
 
-  const sortedPosts = items
-    .slice()
-    .sort((a, b) => {
-      // Convertimos las fechas a objetos Date
-      const dateA = new Date(a.completionDate);
-      const dateB = new Date(b.completionDate);
+  const sortedPosts = items.slice().sort((a, b) => {
+    // Convertimos las fechas a objetos Date
+    const dateA = new Date(a.completionDate);
+    const dateB = new Date(b.completionDate);
 
-      // Comparamos las fechas y retornamos el resultado de la comparación
-      return dateB.getTime() - dateA.getTime();
-    })
-    
-
-
+    // Comparamos las fechas y retornamos el resultado de la comparación
+    return dateB.getTime() - dateA.getTime();
+  });
 
   return (
     <>
@@ -39,7 +34,10 @@ export default function Home() {
 
 function Hero({ sortedPosts }) {
   return (
-    <section className="padding-x-estilo2 flex flex-col gap-12 pt-2 pb-24" id="home">
+    <section
+      className="padding-x-estilo2 flex flex-col gap-12 pb-24 pt-2"
+      id="home"
+    >
       <AnimatePresence>
         <motion.div
           className="flex w-full flex-col items-start justify-center gap-4"
@@ -59,7 +57,7 @@ function Hero({ sortedPosts }) {
                 diseño y desarrollo web
               </span>
             </h1>
-            <p className="text-base-light w-full lg:w-[75%] text-black">
+            <p className="text-base-light w-full text-black lg:w-[75%]">
               Cada proyecto representa un desafío que abordé con dedicación y
               creatividad, y que me permitió adquirir nuevas habilidades y
               conocimientos.

@@ -21,8 +21,6 @@ export default function Home() {
     })
     .slice(0, 6);
 
-
-
   return (
     <>
       <Head>
@@ -175,7 +173,10 @@ function Resenas() {
   };
 
   return (
-    <section className="padding-x-estilo2 flex flex-col gap-10 pt-24 py-20" id="home">
+    <section
+      className="padding-x-estilo2 flex flex-col gap-10 py-20 pt-24"
+      id="home"
+    >
       <div className="flex w-full flex-col items-center justify-center gap-10">
         <h1 className="w-full text-start">
           Reseñas de <span className=" text-4xl font-semibold ">colegas</span>
@@ -186,8 +187,11 @@ function Resenas() {
           columnClassName="masonry-grid-column"
         >
           {resenasItems.map((item, index) => (
-            <div key={index} className="masonry-grid-item rounded-3xl bg-white flex flex-col gap-3">
-              <div className="flex gap-2 items-center" >
+            <div
+              key={index}
+              className="masonry-grid-item flex flex-col gap-3 rounded-3xl bg-white"
+            >
+              <div className="flex items-center gap-2">
                 <Image
                   src={item.picture}
                   alt={item.author}

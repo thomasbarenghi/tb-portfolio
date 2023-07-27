@@ -54,26 +54,29 @@ export const Navigation = ({ toggle }) => (
       ))}
     </div>
     <div className="flex flex-col gap-4 ">
-    <motion.div className="flex flex-col gap-0 " variants={variants2}>
-      <p className="text-sm font-light text-orange-600">Ponte en contacto</p>
-      <p className="text-md font-regular text-black">
-        thomasbarenghi@gmail.com
-      </p>
-    </motion.div>
-    <motion.div className="hidden flex-row items-center justify-start gap-2 lg:flex" variants={variants2}>
-      <Link href="https://github.com/thomasbarenghi">
-        <ReactSVG
-          src="/icon/github.svg"
-          className="h-[30px] w-[30px] cursor-pointer "
-        />
-      </Link>
-      <Link href="https://www.linkedin.com/in/thomasbarenghi/">
-        <ReactSVG
-          src="/icon/linkedin.svg"
-          className="h-[30px] w-[30px] cursor-pointer "
-        />
-      </Link>
-    </motion.div>
+      <motion.div className="flex flex-col gap-0 " variants={variants2}>
+        <p className="text-sm font-light text-orange-600">Ponte en contacto</p>
+        <p className="text-md font-regular text-black">
+          thomasbarenghi@gmail.com
+        </p>
+      </motion.div>
+      <motion.div
+        className="hidden flex-row items-center justify-start gap-2 lg:flex"
+        variants={variants2}
+      >
+        <Link href="https://github.com/thomasbarenghi">
+          <ReactSVG
+            src="/icon/github.svg"
+            className="h-[30px] w-[30px] cursor-pointer "
+          />
+        </Link>
+        <Link href="https://www.linkedin.com/in/thomasbarenghi/">
+          <ReactSVG
+            src="/icon/linkedin.svg"
+            className="h-[30px] w-[30px] cursor-pointer "
+          />
+        </Link>
+      </motion.div>
     </div>
   </motion.ul>
 );

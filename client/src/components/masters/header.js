@@ -33,7 +33,7 @@ export default function Header() {
       }`}
     >
       <div className=" padding-x-estilo2 flex flex-row-reverse items-center justify-between py-8 lg:flex-row">
-        <div className="relative w-auto  h-[40px] ">
+        <div className="relative h-[40px]  w-auto ">
           <Hamburguer mode={router.pathname === "/" ? "white" : "black"} />
         </div>
         <Link
@@ -42,15 +42,23 @@ export default function Header() {
         >
           <ReactSVG
             src="/icon/logo.svg"
-            className={`h-[30px] w-[200px] fill-current ${router.pathname === "/" ? "text-white" : "text-black" }`}
+            className={`h-[30px] w-[200px] fill-current ${
+              router.pathname === "/" ? "text-white" : "text-black"
+            }`}
           />
         </Link>
         <div className="hidden flex-row items-center justify-between gap-2 lg:flex">
           <Link href="https://github.com/thomasbarenghi">
-          <ReactSVG src="/icon/github.svg" className="h-[30px] w-[30px] cursor-pointer " />
+            <ReactSVG
+              src="/icon/github.svg"
+              className="h-[30px] w-[30px] cursor-pointer "
+            />
           </Link>
           <Link href="https://www.linkedin.com/in/thomasbarenghi/">
-          <ReactSVG src="/icon/linkedin.svg" className="h-[30px] w-[30px] cursor-pointer " />
+            <ReactSVG
+              src="/icon/linkedin.svg"
+              className="h-[30px] w-[30px] cursor-pointer "
+            />
           </Link>
         </div>
       </div>

@@ -32,9 +32,9 @@ export const MenuItem = ({ item, toggle }) => {
       {/* <div className="icon-placeholder" style={style} />
       <div className="text-placeholder" style={style} /> */}
       <Link href={item.url}>
-      <p className="text-titulo3-regular w-full cursor-pointer text-start ">
-        {item.title}
-      </p>
+        <p className="text-titulo3-regular w-full cursor-pointer text-start ">
+          {item.title}
+        </p>
       </Link>
     </motion.li>
   );
