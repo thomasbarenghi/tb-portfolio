@@ -72,18 +72,22 @@ function Quick() {
                     </div>
                     <div className="lg:max-width-[30%] flex w-full gap-2 lg:w-max lg:justify-end ">
                       {currentItem?.deployLink && (
-                        <Link href={currentItem?.deployLink}>
-                          <button className="whitespace-nowrap rounded-full bg-[#F24E1E] px-6 py-3 text-sm font-semibold text-white">
-                            Ver deploy
-                          </button>
-                        </Link>
+                        <a
+                          target="_blank"
+                          href={currentItem?.deployLink}
+                          className="whitespace-nowrap rounded-full bg-[#F24E1E] px-6 py-3 text-sm font-semibold text-white"
+                        >
+                          Ver deploy
+                        </a>
                       )}
                       {currentItem?.githubLink && (
-                        <Link href={currentItem?.githubLink}>
-                          <button className="whitespace-nowrap rounded-full border border-[#F24E1E] px-6 py-3 text-sm font-semibold text-[#F24E1E]">
-                            Ver Github
-                          </button>
-                        </Link>
+                        <a
+                          target="_blank"
+                          href={currentItem?.githubLink}
+                          className="whitespace-nowrap rounded-full border border-[#F24E1E] px-6 py-3 text-sm font-semibold text-[#F24E1E]"
+                        >
+                          Ver Github
+                        </a>
                       )}
                     </div>
                   </div>
