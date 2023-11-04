@@ -49,8 +49,10 @@ const Header = ({
     <Navbar
       className={bgColor}
       classNames={{
-        wrapper: 'p-0 h-auto w-full flex justify-between  2xl:container',
-        base: 'min-h-[95px] z-50 padding-x-estilo2 fixed py-6',
+        wrapper:
+          'p-0 h-auto w-full flex justify-between  max-w-none  2xl:container',
+        base: 'min-h-[95px] w-full z-50  fixed py-6',
+        content: 'w-full padding-x-style2',
         brand: 'max-w-[185px] ',
         item: `data-[active=true]:font-semibold font-light ${textColor}`
       }}
@@ -76,39 +78,43 @@ const Header = ({
           />
         </Link>
       </NavbarContent>
-      <NavbarContent
-        className='absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 transform lg:flex'
-        justify='center'
-      >
-        <div className='flex gap-10'>
-          {navItems.map((item: ItemNav, index) => (
-            <Link href={item.path} key={index}>
-              <NavbarItem
-                isActive={pathname === item.path}
-                className='text-black'
-              >
-                {item.name}
-              </NavbarItem>
-            </Link>
-          ))}
-        </div>
-      </NavbarContent>
-      <NavbarContent>
-        <div className=' flex w-full flex-row items-center justify-end gap-2'>
-          <Link href='https://github.com/thomasbarenghi'>
-            <ReactSVG
-              src='/icon/github.svg'
-              className='h-[30px] w-[30px] cursor-pointer '
-            />
-          </Link>
-          <Link href='https://www.linkedin.com/in/thomasbarenghi/'>
-            <ReactSVG
-              src='/icon/linkedin.svg'
-              className='h-[30px] w-[30px] cursor-pointer '
-            />
-          </Link>
-        </div>
-      </NavbarContent>
+      {layout === 'full' && (
+        <>
+          <NavbarContent
+            className='absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 transform lg:flex'
+            justify='center'
+          >
+            <div className='flex gap-10'>
+              {navItems.map((item: ItemNav, index) => (
+                <Link href={item.path} key={index}>
+                  <NavbarItem
+                    isActive={pathname === item.path}
+                    className='text-black'
+                  >
+                    {item.name}
+                  </NavbarItem>
+                </Link>
+              ))}
+            </div>
+          </NavbarContent>
+          <NavbarContent>
+            <div className=' flex w-full flex-row items-center justify-end gap-2'>
+              <Link href='https://github.com/thomasbarenghi'>
+                <ReactSVG
+                  src='/icon/github.svg'
+                  className='h-[30px] w-[30px] cursor-pointer '
+                />
+              </Link>
+              <Link href='https://www.linkedin.com/in/thomasbarenghi/'>
+                <ReactSVG
+                  src='/icon/linkedin.svg'
+                  className='h-[30px] w-[30px] cursor-pointer '
+                />
+              </Link>
+            </div>
+          </NavbarContent>
+        </>
+      )}
     </Navbar>
   )
 }

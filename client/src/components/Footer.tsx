@@ -11,7 +11,7 @@ const Footer = async ({ lang }: Props) => {
   const { footer } = await getDictionary(lang)
   return (
     <footer className='footer seccion font-outfit bg-primary flex items-center  justify-center font-semibold marker:fixed'>
-      <div className='padding-x-estilo2 py-24 '>
+      <div className='padding-x-style2 py-24 '>
         <div className='flex flex-col items-center justify-center rounded-[40px]  '>
           <h1 className='text-title1 w-full text-center font-medium text-white'>
             {footer.title}

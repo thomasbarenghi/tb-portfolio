@@ -19,7 +19,7 @@ const MobileMenu = ({ isOpen, toggle, lang, navigation }: Props) => {
       {!isOpen && <ToggleBtn isOpen={isOpen} toggle={toggle} />}
       {isOpen &&
         createPortal(
-          <div className='padding-x-estilo2 fixed left-0 top-0 z-50 flex h-screen w-screen flex-col gap-14 bg-white py-8'>
+          <div className='padding-x-style2 fixed left-0 top-0 z-50 flex h-screen w-screen flex-col gap-14 bg-white py-8'>
             <div className='flex w-full items-center justify-between'>
               <Image src='/icon/logo.svg' alt='logo' width={185} height={40} />
               <div

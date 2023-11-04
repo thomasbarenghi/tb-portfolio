@@ -14,34 +14,15 @@
 }
 
 @layer base {
-  .padding-x-estilo1 {
-    @apply w-full px-8 sm:px-10 md:px-14 lg:px-16 xl:px-24 2xl:px-32;
-  }
-
-  .padding-y-estilo1 {
-    @apply py-20;
-  }
-
-  .padding-estilo1 {
-    @extend .padding-x-estilo1;
-    @extend .padding-y-estilo1;
-  }
-}
-
-@layer base {
   .text-title1 {
     @apply text-[32px] leading-[115%]
   }
 
-  .text-titulo1 {
-    @apply text-4xl leading-[115%]
-  }
-
-  .text-titulo2 {
+  .text-title2 {
     @apply text-3xl leading-[115%]
   }
 
-  .text-titulo3 {
+  .text-title3 {
     @apply text-2xl leading-[135%]
   }
 
@@ -52,16 +33,7 @@
 }
 
 @layer base {
-  .padding-x-estilo2 {
+  .padding-x-style2 {
     @apply w-full px-4  xs:px-8 sm:px-10 md:px-14 lg:px-20 xl:px-24;
-  }
-
-  .padding-y-estilo2 {
-    @apply py-16;
-  }
-
-  .padding-estilo2 {
-    @extend .padding-x-estilo2;
-    @extend .padding-y-estilo2;
   }
 }

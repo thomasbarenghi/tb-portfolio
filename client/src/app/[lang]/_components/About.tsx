@@ -10,11 +10,11 @@ interface Props {
 const About = async ({ lang }: Props) => {
   const { page } = await getDictionary(lang)
   return (
-    <section className='padding-x-estilo2 flex flex-col-reverse items-center gap-14 2xl:container md:grid  md:grid-cols-[auto,300px] lg:grid-cols-[auto,350px] '>
+    <section className='padding-x-style2 flex flex-col-reverse items-center gap-14 2xl:container md:grid  md:grid-cols-[auto,300px] lg:grid-cols-[auto,350px] '>
       <div className='flex flex-col items-start gap-2'>
-        <h1 className='text-titulo1 font-semibold '>
+        <h1 className='text-title1 font-semibold '>
           {page.home.about.title}{' '}
-          <span className='text-titulo1 animate-pulse font-semibold'>❤️</span>
+          <span className='text-title1 animate-pulse font-semibold'>❤️</span>
         </h1>
         <p className='text-body'>{page.home.about.description}</p>
         <div className='flex gap-2'>

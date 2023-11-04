@@ -5,10 +5,18 @@ import Hero from './_components/Hero'
 import Reviews from './_components/Reviews'
 import Skills from './_components/Skills'
 import { getDictionary } from '@/utils/dictionaries.utils'
+import { type Metadata } from 'next'
 
 interface Props {
   params: {
     lang: Locale
+  }
+}
+
+export const generateMetadata = async (props: Props): Promise<Metadata> => {
+  const { navigation } = await getDictionary(props.params.lang)
+  return {
+    title: `${navigation.home} | Thomas Barenghi`
   }
 }
 

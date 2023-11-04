@@ -37,17 +37,17 @@ const SanityRenderer = ({ content }: Props) => {
     },
     block: {
       h1: ({ children }: { children: React.ReactNode }) => (
-        <h1 className='text-titulo1 w-full text-start font-semibold'>
+        <h1 className='text-title1 w-full text-start font-semibold'>
           {children}
         </h1>
       ),
       h2: ({ children }: { children: React.ReactNode }) => (
-        <h2 className='text-titulo2 w-full text-start font-semibold'>
+        <h2 className='text-title2 w-full text-start font-semibold'>
           {children}
         </h2>
       ),
       h3: ({ children }: { children: React.ReactNode }) => (
-        <h3 className='text-titulo3 w-full text-start font-semibold'>
+        <h3 className='text-title3 w-full text-start font-semibold'>
           {children}
         </h3>
       )
