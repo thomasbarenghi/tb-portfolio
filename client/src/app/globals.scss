@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+.no-scroll {
+  overflow: hidden;
+}
+
+@layer base {
+  p {
+    @apply text-base font-light;
+  }
+}
+
+@layer base {
+  @font-face {
+    font-family: "Georgia Regular";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Georgia Regular"), url("/assets/fonts/georgia.woff2") format("woff2");
+  }
+
+  @font-face {
+    font-family: "Georgia Italic";
+    font-style: italic;
+    font-weight: normal;
+    src: local("Georgia Italic"), url("/assets/fonts/georgiai.woff2") format("woff2");
+  }
+
+  @font-face {
+    font-family: "Georgia Bold";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Georgia Bold"), url("/assets/fonts/georgiab.woff2") format("woff2");
+  }
+
+  @font-face {
+    font-family: "Georgia Bold Italic";
+    font-style: italic;
+    font-weight: normal;
+    src: local("Georgia Bold Italic"),
+      url("/assets/fonts/georgiaz.woff2") format("woff2");
+  }
+}
+
+@layer base {
+  .padding-x-estilo1 {
+    @apply w-full px-8 sm:px-10 md:px-14 lg:px-16 xl:px-24 2xl:px-32;
+  }
+
+  .padding-y-estilo1 {
+    @apply py-20;
+  }
+
+  .padding-estilo1 {
+    @extend .padding-x-estilo1;
+    @extend .padding-y-estilo1;
+  }
+}
+
+@layer base {
+  .text-titulo1 {
+    @apply text-4xl leading-[115%]
+  }
+
+  .text-titulo2 {
+    @apply text-3xl leading-[115%]
+  }
+
+  .text-titulo3 {
+    @apply text-2xl leading-[135%]
+  }
+
+}
+
+@layer base {
+  .padding-x-estilo2 {
+    @apply w-full px-4  xs:px-8 sm:px-10 md:px-14 lg:px-20 xl:px-24;
+  }
+
+  .padding-y-estilo2 {
+    @apply py-16;
+  }
+
+  .padding-estilo2 {
+    @extend .padding-x-estilo2;
+    @extend .padding-y-estilo2;
+  }
+}
