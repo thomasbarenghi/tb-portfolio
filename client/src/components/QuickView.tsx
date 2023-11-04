@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
-import { SanityRenderer } from '@/components'
+import { Button, SanityRenderer } from '@/components'
 import { createPortal } from 'react-dom'
 
 interface Props {
@@ -59,22 +59,19 @@ const QuickView = ({ item, isVisible, setQuickVisibility }: Props) => {
                       </div>
                       <div className='lg:max-width-[30%] flex w-full gap-2 lg:w-max lg:justify-end '>
                         {item?.deployLink && (
-                          <a
+                          <Button
                             target='_blank'
                             href={item?.deployLink}
-                            className='whitespace-nowrap rounded-full bg-[#F24E1E] px-6 py-3 text-sm font-semibold text-white'
-                          >
-                            Ver deploy
-                          </a>
+                            title='Deploy'
+                          />
                         )}
                         {item?.githubLink && (
-                          <a
+                          <Button
                             target='_blank'
                             href={item?.githubLink}
-                            className='whitespace-nowrap rounded-full border border-[#F24E1E] px-6 py-3 text-sm font-semibold text-[#F24E1E]'
-                          >
-                            Ver Github
-                          </a>
+                            variant='flat'
+                            title='Github'
+                          />
                         )}
                       </div>
                     </div>
@@ -90,7 +87,7 @@ const QuickView = ({ item, isVisible, setQuickVisibility }: Props) => {
                       />
                     </div>
                     <div className='flex flex-col gap-2 px-2 sm:px-3 md:px-5'>
-                      <h2 className='text-xl font-semibold'>Tecnologias</h2>
+                      <h2 className='text-xl font-semibold'>Stack</h2>
                       <div className='flex flex-col  gap-2 '>
                         <p className='text-base'>
                           {' '}

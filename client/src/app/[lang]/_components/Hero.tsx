@@ -12,7 +12,7 @@ const Hero = async ({ lang }: Props) => {
   const { data } = await getProjects()
   const sortedPosts = sortProjects(data, true).slice(0, 3)
   return (
-    <section className='flex w-full flex-col items-center justify-center '>
+    <section className='flex w-full flex-col items-center justify-center 2xl:container '>
       <div className='padding-x-style2 z-10 flex w-full flex-col items-start justify-center gap-10 lg:items-center '>
         <div className='flex flex-col items-center gap-2'>
           {lang === 'es' ? (

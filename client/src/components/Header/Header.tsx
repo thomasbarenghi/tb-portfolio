@@ -52,8 +52,7 @@ const Header = ({
         wrapper:
           'p-0 h-auto w-full flex justify-between  max-w-none  2xl:container',
         base: 'min-h-[95px] w-full z-50  fixed py-6',
-        content: 'w-full padding-x-style2',
-        brand: 'max-w-[185px] ',
+        content: 'padding-x-style2',
         item: `data-[active=true]:font-semibold font-light ${textColor}`
       }}
       isBlurred={isScrolled}
@@ -77,27 +76,22 @@ const Header = ({
             className={`h-[40px] w-[185px] fill-current ${logoFill}`}
           />
         </Link>
-      </NavbarContent>
-      {layout === 'full' && (
-        <>
-          <NavbarContent
-            className='absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 transform lg:flex'
-            justify='center'
-          >
-            <div className='flex gap-10'>
-              {navItems.map((item: ItemNav, index) => (
-                <Link href={item.path} key={index}>
-                  <NavbarItem
-                    isActive={pathname === item.path}
-                    className='text-black'
-                  >
-                    {item.name}
-                  </NavbarItem>
-                </Link>
-              ))}
+        {layout === 'full' && (
+          <>
+            <div className='absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 transform lg:flex'>
+              <div className='flex gap-8'>
+                {navItems.map((item: ItemNav, index) => (
+                  <Link href={item.path} key={index}>
+                    <NavbarItem
+                      isActive={pathname === item.path}
+                      className='text-black'
+                    >
+                      {item.name}
+                    </NavbarItem>
+                  </Link>
+                ))}
+              </div>
             </div>
-          </NavbarContent>
-          <NavbarContent>
             <div className=' flex w-full flex-row items-center justify-end gap-2'>
               <Link href='https://github.com/thomasbarenghi'>
                 <ReactSVG
@@ -112,9 +106,9 @@ const Header = ({
                 />
               </Link>
             </div>
-          </NavbarContent>
-        </>
-      )}
+          </>
+        )}
+      </NavbarContent>
     </Navbar>
   )
 }

@@ -1,69 +1,69 @@
 {
   "navigation": {
     "home": "Home",
-    "work": "Portafolio",
+    "work": "Portfolio",
     "resume": "CV"
   },
   "page": {
     "home": {
       "hero": {
-        "title": "Hola, soy Thomas Barenghi",
-        "description": "Mi misión es crear soluciones web innovadoras y eficientes. Juntosllevaremos tus ideas al siguiente nivel."
+        "title": "Hello, I'm Thomas Barenghi",
+        "description": "My mission is to create innovative and efficient web solutions. Together we will take your ideas to the next level."
       },
       "about": {
-        "title": "Acerca de mi",
-        "description": "Soy desarrollador Full Stack, tengo 20 años y vivo en Buenos Aires. Desde los 12 años, tengo una gran pasión por la tecnología y el desarrollo de software, comencé mi carrera de manera autodidacta, tengo experiencia como técnico electrónico, desarrollador web y analista LiDAR. Estoy estudiando Licenciatura en Informática y me gradué de Soy Henry.",
-        "btn1": "Contactame",
-        "btn2": "Ver todos mis proyectos"
+        "title": "About me",
+        "description": "I am a Full Stack developer, I am 20 years old and I live in Buenos Aires. Since I was 12 years old, I have a great passion for technology and software development, I started my career self-taught, I have experience as an electronic technician, web developer and LiDAR analyst. I am studying a Bachelor's degree in Computer Science and graduated from I am Henry.",
+        "btn1": "Contact me",
+        "btn2": "See all my projects"
       },
       "skills": {
-        "title": "Mis habilidades",
-        "description": "Trabajé y supervisé más de 10 proyectos de desarrollo web, como proyectos Full Stack, CMS, low-code, electrónica y domótica. He trabajdo con mas de 120 personas a lo largo de mi carrera y como Team Leader, he dirigido equipos de entre 8 y 14 personas, siempre me he adaptado satisfactoriamente a diferentes entornos y personas. "
+        "title": "My skills",
+        "description": "I worked and supervised more than 10 web development projects, such as Full Stack, CMS, low-code, electronics and home automation projects. I have worked with more than 120 people throughout my career and as a Team Leader, I have managed teams of between 8 and 14 people, I have always adapted satisfactorily to different environments and people."
       },
       "reviews": {
-        "title": "¿Qué se dice de mi?",
-        "description": "Reseñas de compañeros, y superiores."
+        "title": "What is said about me?",
+        "description": "Reviews from colleagues and superiors."
       }
     },
     "work": {
-      "title": "Descubre mi enfoque en diseño y desarrollo web",
-      "description": "Cada proyecto representa un desafío que abordé con dedicación y creatividad, y que me permitió adquirir nuevas habilidades y conocimientos."
+      "title": "Discover my approach to web design and development",
+      "description": "Each project represents a challenge that I approached with dedication and creativity, and that allowed me to acquire new skills and knowledge."
     }
   },
   "footer": {
-    "title": "¿Tenés algo en mente?",
-    "description": "¡Quiero ser parte de tu equipo! Contáctame ahora."
+    "title": "Do you have something in mind?",
+    "description": "I want to be part of your team! Contact me now."
   },
   "reviews": [
     {
       "author": "Fabian Pacheco",
-      "position": "Compañero en Henry | Desarrollador Fullstack",
+      "position": "Colleague at Henry | Fullstack Developer",
       "picture": "/image/resenas/fabian.jpg",
-      "text": "Desde mi experiencia trabajando con él en el proyecto de Beat Connect puedo decir que es un gran diseñador, con gran creatividad y un alto nivel en desarrollo web. También puedo decir que es una persona bastante experimentada en lo que es front-end y he notado que no tiene dificultad para solucionar los bugs o problemas que se puedan presentar durante el desarrollo."
+      "text": "From my experience working with him on the Beat Connect project I can say that he is a great designer, with great creativity and a high level of web development. I can also say that he is a fairly experienced person in front-end and I have noticed that it has no difficulty in solving bugs or problems that may arise during development."
     },
     {
       "author": "Juan Villalba",
-      "position": "Supervisor en BeatConnect | Desarrollador Fullstack",
+      "position": "Supervisor at BeatConnect | Fullstack Developer",
       "picture": "/image/resenas/juan.jpg",
-      "text": "Lamento si alguien tiene dudas del potencial de Thomas. Es un profesional de muy alto nivel, maneja muy buenos criterios en UX/UI. Sabe modularizar código de manera impecable y entiende muy bien los procesos y tareas que debe ejecutar. He tenido la suerte de supervisar su trabajo y no ha hecho otra cosa más que crecer. La empresa que cuente con la suerte de tenerlo en sus filas va a salir ganando sin dudas."
+      "text": "I'm sorry if anyone has doubts about Thomas' potential. He is a very high-level professional, has very good criteria in UX/UI. He knows how to modularize code impeccably and understands very well the processes and tasks he must execute. I have been fortunate enough to supervise his work and he has done nothing but grow. The company that is lucky enough to have him in its ranks will undoubtedly win."
     },
     {
       "author": "Lucas Regner",
-      "position": "Compañero en Henry | Desarrollador Fullstack",
+      "position": "Colleague at Henry | Fullstack Developer",
       "picture": "/image/resenas/lucas.png",
-      "text": "Buena calidad técnica para desarrollar en el frontend. Gran nivel técnico de código. Excelente manejo de Figma y diseño UX/UI."
+      "text": "Good technical quality to develop in the frontend. Great technical level of code. Excellent handling of Figma and UX/UI design."
     },
     {
       "author": "Valentin Dealbera",
-      "position": "Compañero en Henry | Desarrollador Fullstack en Avature",
+      "position": "Colleague at Henry | Fullstack Developer at Avature",
       "picture": "/image/resenas/valentin.png",
-      "text": "Muy buen compañero y programador, muy buena resolución de problemas y creatividad de soluciones."
+      "text": "Very good colleague and programmer, very good problem solving and creative solutions."
     },
     {
       "author": "Tadeo Massó",
-      "position": "Compañero en Henry | Desarrollador Fullstack",
+      "position": "Colleague at Henry | Fullstack Developer",
       "picture": "/image/resenas/tadeo.png",
-      "text": "Muy buen programador, sabe escuchar y adaptarse a los cambios, destacables habilidades blandas, en diseño ux/ui y muy comprometido con el trabajo."
+      "text": "Very good programmer, he knows how to listen and adapt to changes, notable soft skills in ux/ui design and very committed to the work."
     }
   ]
 }
