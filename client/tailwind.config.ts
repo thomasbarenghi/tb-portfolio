@@ -1,7 +1,9 @@
 import type { Config } from 'tailwindcss'
+import { nextui } from '@nextui-org/react'
 
 const config: Config = {
   content: [
+    './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}',
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}'
@@ -11,12 +13,6 @@ const config: Config = {
       screens: {
         xs: '380px'
       },
-      fontFamily: {
-        georgiaRegular: 'Georgia Regular, serif',
-        georgiaBold: 'Georgia Bold, serif',
-        georgiaItalic: 'Georgia Italic, serif',
-        georgiaBoldItalic: 'Georgia Bold Italic, serif'
-      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
@@ -24,6 +20,21 @@ const config: Config = {
       }
     }
   },
-  plugins: []
+  darkMode: 'class',
+  plugins: [
+    nextui({
+      defaultTheme: 'light',
+      themes: {
+        light: {
+          colors: {
+            primary: {
+              DEFAULT: '#0F03C1',
+              foreground: '#E5E3FF'
+            }
+          }
+        }
+      }
+    })
+  ]
 }
 export default config

@@ -23,7 +23,7 @@ const ProjectCard = ({ item, withData }: Props) => {
       />
       <div
         onClick={handleCardClick}
-        className='flex aspect-square h-auto cursor-pointer  flex-col gap-2'
+        className='flex aspect-square h-auto cursor-pointer  flex-col gap-4'
       >
         <div className='relative aspect-[4/3] h-full w-full '>
           <Image
@@ -33,8 +33,8 @@ const ProjectCard = ({ item, withData }: Props) => {
             className='aspect-[4/3] h-full w-full rounded-3xl object-cover'
           />
         </div>
-        <div className='flex flex-col'>
-          <h3 className='text-titulo3 font-normal'>{item.title}</h3>
+        <div className='flex flex-col gap-1'>
+          <h3 className='text-base font-semibold'>{item.title}</h3>
           <p className='text-sm font-light text-black '>{item.description}</p>
         </div>
       </div>

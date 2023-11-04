@@ -9,38 +9,7 @@
 
 @layer base {
   p {
-    @apply text-base font-light;
-  }
-}
-
-@layer base {
-  @font-face {
-    font-family: "Georgia Regular";
-    font-style: normal;
-    font-weight: normal;
-    src: local("Georgia Regular"), url("/assets/fonts/georgia.woff2") format("woff2");
-  }
-
-  @font-face {
-    font-family: "Georgia Italic";
-    font-style: italic;
-    font-weight: normal;
-    src: local("Georgia Italic"), url("/assets/fonts/georgiai.woff2") format("woff2");
-  }
-
-  @font-face {
-    font-family: "Georgia Bold";
-    font-style: normal;
-    font-weight: normal;
-    src: local("Georgia Bold"), url("/assets/fonts/georgiab.woff2") format("woff2");
-  }
-
-  @font-face {
-    font-family: "Georgia Bold Italic";
-    font-style: italic;
-    font-weight: normal;
-    src: local("Georgia Bold Italic"),
-      url("/assets/fonts/georgiaz.woff2") format("woff2");
+    @apply text-base font-normal;
   }
 }
 
@@ -60,6 +29,10 @@
 }
 
 @layer base {
+  .text-title1 {
+    @apply text-[32px] leading-[115%]
+  }
+
   .text-titulo1 {
     @apply text-4xl leading-[115%]
   }
@@ -70,6 +43,10 @@
 
   .text-titulo3 {
     @apply text-2xl leading-[135%]
+  }
+
+  .text-body {
+    @apply text-base leading-[165%]
   }
 
 }
