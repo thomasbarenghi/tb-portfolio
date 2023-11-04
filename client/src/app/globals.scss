@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+.no-scroll {
+  overflow: hidden;
+}
+
+@layer base {
+  p {
+    @apply text-base font-normal;
+  }
+}
+
+@layer base {
+  .text-title1 {
+    @apply text-[32px] leading-[115%]
+  }
+
+  .text-title2 {
+    @apply text-3xl leading-[115%]
+  }
+
+  .text-title3 {
+    @apply text-2xl leading-[135%]
+  }
+
+  .text-body {
+    @apply text-base leading-[165%]
+  }
+
+}
+
+@layer base {
+  .padding-x-style2 {
+    @apply w-full px-4  xs:px-8 sm:px-10 md:px-14 lg:px-20 xl:px-24;
+  }
+}

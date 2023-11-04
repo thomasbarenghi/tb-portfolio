@@ -1,0 +1,69 @@
+{
+  "navigation": {
+    "home": "Home",
+    "work": "Portfolio",
+    "resume": "CV"
+  },
+  "page": {
+    "home": {
+      "hero": {
+        "title": "Hello, I'm Thomas Barenghi",
+        "description": "My mission is to create innovative and efficient web solutions. Together we will take your ideas to the next level."
+      },
+      "about": {
+        "title": "About me",
+        "description": "I am a Full Stack developer, I am 20 years old and I live in Buenos Aires. Since I was 12 years old, I have a great passion for technology and software development, I started my career self-taught, I have experience as an electronic technician, web developer and LiDAR analyst. I am studying a Bachelor's degree in Computer Science and graduated from I am Henry.",
+        "btn1": "Contact me",
+        "btn2": "See all my projects"
+      },
+      "skills": {
+        "title": "My skills",
+        "description": "I worked and supervised more than 10 web development projects, such as Full Stack, CMS, low-code, electronics and home automation projects. I have worked with more than 120 people throughout my career and as a Team Leader, I have managed teams of between 8 and 14 people, I have always adapted satisfactorily to different environments and people."
+      },
+      "reviews": {
+        "title": "What is said about me?",
+        "description": "Reviews from colleagues and superiors."
+      }
+    },
+    "work": {
+      "title": "Discover my approach to web design and development",
+      "description": "Each project represents a challenge that I approached with dedication and creativity, and that allowed me to acquire new skills and knowledge."
+    }
+  },
+  "footer": {
+    "title": "Do you have something in mind?",
+    "description": "I want to be part of your team! Contact me now."
+  },
+  "reviews": [
+    {
+      "author": "Fabian Pacheco",
+      "position": "Colleague at Henry | Fullstack Developer",
+      "picture": "/image/resenas/fabian.jpg",
+      "text": "From my experience working with him on the Beat Connect project I can say that he is a great designer, with great creativity and a high level of web development. I can also say that he is a fairly experienced person in front-end and I have noticed that it has no difficulty in solving bugs or problems that may arise during development."
+    },
+    {
+      "author": "Juan Villalba",
+      "position": "Supervisor at BeatConnect | Fullstack Developer",
+      "picture": "/image/resenas/juan.jpg",
+      "text": "I'm sorry if anyone has doubts about Thomas' potential. He is a very high-level professional, has very good criteria in UX/UI. He knows how to modularize code impeccably and understands very well the processes and tasks he must execute. I have been fortunate enough to supervise his work and he has done nothing but grow. The company that is lucky enough to have him in its ranks will undoubtedly win."
+    },
+    {
+      "author": "Lucas Regner",
+      "position": "Colleague at Henry | Fullstack Developer",
+      "picture": "/image/resenas/lucas.png",
+      "text": "Good technical quality to develop in the frontend. Great technical level of code. Excellent handling of Figma and UX/UI design."
+    },
+    {
+      "author": "Valentin Dealbera",
+      "position": "Colleague at Henry | Fullstack Developer at Avature",
+      "picture": "/image/resenas/valentin.png",
+      "text": "Very good colleague and programmer, very good problem solving and creative solutions."
+    },
+    {
+      "author": "Tadeo Massó",
+      "position": "Colleague at Henry | Fullstack Developer",
+      "picture": "/image/resenas/tadeo.png",
+      "text": "Very good programmer, he knows how to listen and adapt to changes, notable soft skills in ux/ui design and very committed to the work."
+    }
+  ]
+}
