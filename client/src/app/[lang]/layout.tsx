@@ -3,6 +3,7 @@ import NextUiProvider from '@/context/providers/nextUi.provider'
 import localFont from 'next/font/local'
 import dynamic from 'next/dynamic'
 import { type Locale, i18n } from '@/i18n.config'
+import { type Viewport } from 'next'
 
 const SWRProvider = dynamic(
   async () => await import('@/context/providers/swr.provider'),
@@ -10,6 +11,10 @@ const SWRProvider = dynamic(
     ssr: false
   }
 )
+
+export const viewport: Viewport = {
+  themeColor: '#0F03C1'
+}
 
 export const metadata = {
   title: 'Thomas Barenghi'

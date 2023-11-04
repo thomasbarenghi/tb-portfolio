@@ -18,10 +18,8 @@ const About = async ({ lang }: Props) => {
         </h1>
         <p className='text-body'>{page.home.about.description}</p>
         <div className='flex gap-2'>
-          <Button title={page.home.about.btn1} className='mt-2' />
           <Button
             title={page.home.about.btn2}
-            variant='flat'
             className='mt-2'
             href={Routes.WORK(lang)}
           />
