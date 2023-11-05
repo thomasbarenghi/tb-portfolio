@@ -2,6 +2,7 @@ import { Button, MarkdownRenderer } from '@/components'
 import { type Locale } from '@/i18n.config'
 import { type IProject } from '@/interfaces/project.interface'
 import Image from 'next/image'
+// import Slider from './Slider'
 
 interface Props {
   project: IProject
@@ -37,7 +38,7 @@ const Hero = async ({ project, lang }: Props) => (
       <div className='relative aspect-video w-full items-start text-start'>
         <Image
           layout='fill'
-          className='rounded-3xl object-cover '
+          className='rounded-3xl object-cover'
           src={
             typeof project?.multimedia?.coverImage === 'string'
               ? project?.multimedia?.coverImage
@@ -46,6 +47,17 @@ const Hero = async ({ project, lang }: Props) => (
           alt={project?.title[lang]}
         />
       </div>
+      {/* <Slider
+        images={
+          Array.isArray(project?.multimedia?.gallery)
+            ? project?.multimedia?.gallery // Usar gallery si es un arreglo
+            : [
+                typeof project?.multimedia?.coverImage === 'string'
+                  ? project?.multimedia?.coverImage
+                  : '/images/placeholder.png'
+              ]
+        }
+      /> */}
       <div className='flex flex-col gap-6'>
         <div className='flex flex-col gap-2 '>
           <h2 className='text-xl font-semibold'>Stack</h2>
