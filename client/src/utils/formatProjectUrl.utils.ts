@@ -1,12 +1,25 @@
+import { type IProject, type IImage } from '@/interfaces/project.interface'
 import { urlFor } from '@/utils/urlFor.utils'
 
-export const formatProjectUrl = (project: any) => {
+const transformImage = (image: IImage | string): string => {
+  if (!image || typeof image === 'string') return image
+
+  return urlFor(image.asset._ref).url()
+}
+
+export const formatProjectUrl = (project: IProject): IProject[] => {
   const items =
     Array.isArray(project) &&
-    project?.map((item: any) => ({
+    project.map((item: IProject) => ({
       ...item,
-      coverImage: urlFor(item.coverImage.asset._ref).url()
+      multimedia: {
+        coverImage: transformImage(item.multimedia.coverImage),
+        mainImage: transformImage(item.multimedia.mainImage),
+        gallery: item.multimedia.gallery.map((image: IImage | string) =>
+          transformImage(image)
+        )
+      }
     }))
 
-  return items
+  return items || []
 }

@@ -21,12 +21,12 @@ const Error = ({ reset }: Props) => (
           <div className='flex gap-2'>
             <Button
               href={Routes.HOME('en')}
-              title='Volver al inicio'
+              title='Go to home'
               className='mt-4'
             />
             <Button
               onClick={reset}
-              title='Reintentar'
+              title='Try again'
               className='mt-4'
               variant='flat'
             />
