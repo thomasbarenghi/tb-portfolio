@@ -1,5 +1,6 @@
 import {defineType, defineField, defineArrayMember, ObjectRule} from 'sanity'
 import {CustomMarkdownInput} from '../components/MarkdownInputCustomPreview'
+import {isUniqueAcrossAllDocuments} from '../lib/isUniqueAcrossAllDocuments'
 
 const someDocumentType = defineType({
   title: 'Portfolio',
@@ -11,6 +12,17 @@ const someDocumentType = defineType({
       name: 'sanityTitle',
       type: 'string',
       validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      title: 'Slug',
+      name: 'slug',
+      type: 'slug',
+      validation: (Rule) => Rule.required(),
+      options: {
+        source: 'sanityTitle',
+        isUnique: isUniqueAcrossAllDocuments,
+        slugify: (input) => input.toLowerCase().replace(/\s+/g, '-').slice(0, 200),
+      },
     }),
     defineField({
       title: 'Multimedia',

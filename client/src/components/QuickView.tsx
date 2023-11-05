@@ -98,21 +98,24 @@ const QuickView = ({ item, isVisible, setQuickVisibility, lang }: Props) => {
                       <div className='flex flex-col gap-2 '>
                         <h2 className='text-xl font-semibold'>Stack</h2>
                         <div className='flex flex-col  gap-2 '>
-                          <p className='text-base'>
-                            {' '}
-                            <span className='font-medium'>Frontend:</span>{' '}
-                            {item?.technologies.frontTecnologies}
-                          </p>
-                          <p className='text-base'>
-                            {' '}
-                            <span className='font-medium'>Backend:</span>{' '}
-                            {item?.technologies.backTecnologies}
-                          </p>
-                          <p className='text-base'>
-                            {' '}
-                            <span className='font-medium'>Database:</span>{' '}
-                            {item?.technologies.databaseTecnologies}
-                          </p>
+                          {item?.technologies?.frontTecnologies && (
+                            <p className='text-base'>
+                              <span className='font-medium'>Frontend:</span>{' '}
+                              {item?.technologies.frontTecnologies}
+                            </p>
+                          )}
+                          {item?.technologies?.backTecnologies && (
+                            <p className='text-base'>
+                              <span className='font-medium'>Backend:</span>{' '}
+                              {item?.technologies.backTecnologies}
+                            </p>
+                          )}
+                          {item?.technologies?.databaseTecnologies && (
+                            <p className='text-base'>
+                              <span className='font-medium'>Database:</span>{' '}
+                              {item?.technologies.databaseTecnologies}
+                            </p>
+                          )}
                         </div>
                       </div>
                       <hr className='' />
