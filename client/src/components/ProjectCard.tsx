@@ -12,7 +12,6 @@ interface Props {
 const ProjectCard = ({ item, lang }: Props) => {
   const [quickVisibility, setQuickVisibility] = useState(false)
   const handleCardClick = () => {
-    console.log('handleCardClick', item)
     setQuickVisibility(true)
   }
   return (

@@ -35,7 +35,7 @@ const Work = async ({ params: { lang } }: Props) => {
               </p>
             </div>
           </div>
-          <ProjectsGrid items={sortedPosts} />
+          <ProjectsGrid items={sortedPosts} lang={lang} />
         </section>
       </main>
       <Footer lang={lang} />

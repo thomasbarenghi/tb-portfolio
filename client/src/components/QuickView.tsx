@@ -21,7 +21,7 @@ const QuickView = ({ item, isVisible, setQuickVisibility, lang }: Props) => {
       document.body.classList.remove('no-scroll')
     }
   }, [isVisible])
-  console.log('item', item)
+
   return (
     <>
       {isVisible &&
