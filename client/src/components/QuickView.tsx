@@ -2,16 +2,18 @@
 import React, { useEffect } from 'react'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Button, SanityRenderer } from '@/components'
+import { Button, MarkdownRenderer } from '@/components'
 import { createPortal } from 'react-dom'
+import { type IProject } from '@/interfaces/project.interface'
 
 interface Props {
-  item: any
+  item: IProject
+  lang: LangType
   isVisible: boolean
   setQuickVisibility: (value: boolean) => void
 }
 
-const QuickView = ({ item, isVisible, setQuickVisibility }: Props) => {
+const QuickView = ({ item, isVisible, setQuickVisibility, lang }: Props) => {
   useEffect(() => {
     if (isVisible) {
       document.body.classList.add('no-scroll')
@@ -19,7 +21,7 @@ const QuickView = ({ item, isVisible, setQuickVisibility }: Props) => {
       document.body.classList.remove('no-scroll')
     }
   }, [isVisible])
-
+  console.log('item', item)
   return (
     <>
       {isVisible &&
@@ -52,23 +54,25 @@ const QuickView = ({ item, isVisible, setQuickVisibility }: Props) => {
                     <div className='mb-8 flex flex-col items-start justify-between gap-4 lg:flex-row lg:items-center'>
                       <div className='flex w-full flex-col gap-1 text-start'>
                         <h1 className='text-3xl font-semibold'>
-                          {item?.title}
+                          {item?.title[lang]}
                         </h1>
-                        <p className=' block text-start'>{item?.description}</p>
+                        <p className=' block text-start'>
+                          {item?.description[lang]}
+                        </p>
                         {/* <p className="text-sm">Finalizacion: {item?.completionDate}</p> */}
                       </div>
                       <div className='lg:max-width-[30%] flex w-full gap-2 lg:w-max lg:justify-end '>
-                        {item?.deployLink && (
+                        {item?.links.deployLink && (
                           <Button
                             target='_blank'
-                            href={item?.deployLink}
+                            href={item?.links.deployLink}
                             title='Deploy'
                           />
                         )}
-                        {item?.githubLink && (
+                        {item?.links.githubLink && (
                           <Button
                             target='_blank'
-                            href={item?.githubLink}
+                            href={item?.links.githubLink}
                             variant='flat'
                             title='Github'
                           />
@@ -82,33 +86,39 @@ const QuickView = ({ item, isVisible, setQuickVisibility }: Props) => {
                       <Image
                         layout='fill'
                         className='rounded-3xl object-cover '
-                        src={item?.coverImage}
-                        alt={item?.title}
+                        src={
+                          typeof item?.multimedia?.coverImage === 'string'
+                            ? item?.multimedia?.coverImage
+                            : '/images/placeholder.png'
+                        }
+                        alt={item?.title[lang]}
                       />
                     </div>
-                    <div className='flex flex-col gap-2 px-2 sm:px-3 md:px-5'>
-                      <h2 className='text-xl font-semibold'>Stack</h2>
-                      <div className='flex flex-col  gap-2 '>
-                        <p className='text-base'>
-                          {' '}
-                          <span className='font-medium'>Frontend:</span>{' '}
-                          {item?.frontTecnologies}
-                        </p>
-                        <p className='text-base'>
-                          {' '}
-                          <span className='font-medium'>Backend:</span>{' '}
-                          {item?.backTecnologies}
-                        </p>
-                        <p className='text-base'>
-                          {' '}
-                          <span className='font-medium'>Database:</span>{' '}
-                          {item?.databaseTecnologies}
-                        </p>
+                    <div className='flex flex-col gap-6'>
+                      <div className='flex flex-col gap-2 '>
+                        <h2 className='text-xl font-semibold'>Stack</h2>
+                        <div className='flex flex-col  gap-2 '>
+                          <p className='text-base'>
+                            {' '}
+                            <span className='font-medium'>Frontend:</span>{' '}
+                            {item?.technologies.frontTecnologies}
+                          </p>
+                          <p className='text-base'>
+                            {' '}
+                            <span className='font-medium'>Backend:</span>{' '}
+                            {item?.technologies.backTecnologies}
+                          </p>
+                          <p className='text-base'>
+                            {' '}
+                            <span className='font-medium'>Database:</span>{' '}
+                            {item?.technologies.databaseTecnologies}
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                    <hr className='mx-2 my-8 sm:mx-3 md:mx-5 lg:my-8' />
-                    <div>
-                      <SanityRenderer content={item?.content} />
+                      <hr className='' />
+                      <div>
+                        <MarkdownRenderer markdown={item?.content[lang]} />
+                      </div>
                     </div>
                   </div>
                 </div>

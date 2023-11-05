@@ -28,7 +28,7 @@ const Hero = async ({ lang }: Props) => {
           )}
           <p className='text-center'>{page.home.hero.description}</p>
         </div>
-        <ProjectsGrid items={sortedPosts} />
+        <ProjectsGrid items={sortedPosts} lang={lang} />
       </div>
     </section>
   )
