@@ -9,13 +9,7 @@ interface Response {
 }
 
 export const getProjects = async (): Promise<Response> => {
-  const { data, error } = await getRequest(
-    Endpoints.PROJECTS,
-    {},
-    {
-      cache: 'no-cache'
-    }
-  )
+  const { data, error } = await getRequest(Endpoints.PROJECTS, {})
   if (error) throw new Error('Error al obtener los proyectos')
   console.log('data', data)
   return { data: formatProjectUrl(data.result), error }
