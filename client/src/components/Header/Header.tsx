@@ -31,7 +31,6 @@ const Header = ({
   }
 
   const bgColor = isScrolled ? 'bg-[#FFFFFFF1]' : 'bg-transparent'
-  console.log('Header', isScrolled, bgColor)
 
   const textColor = isScrolled
     ? 'text-black'
