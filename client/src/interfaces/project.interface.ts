@@ -1,6 +1,7 @@
 export interface IProject {
   title: IDescription
   _rev: string
+  slug: ISlug
   content: IDescription
   multimedia: IMultimedia
   completionDate: Date
@@ -12,6 +13,11 @@ export interface IProject {
   _updatedAt: Date
   _createdAt: Date
   technologies: ITechnologies
+}
+
+export interface ISlug {
+  _type: string
+  current: string
 }
 
 export interface IDescription {
