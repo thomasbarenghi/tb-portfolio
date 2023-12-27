@@ -1,3 +1,13 @@
+export interface IProjectResponse {
+  query: string
+  result: IProject[]
+}
+
+export interface IProjectSingleResponse {
+  query: string
+  result: IProject
+}
+
 export interface IProject {
   title: IDescription
   _rev: string

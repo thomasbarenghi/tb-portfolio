@@ -1,7 +1,6 @@
 import { ProjectsGrid } from '@/components'
 import { getProjects } from '@/services/portfolio/getAll'
 import { getDictionary } from '@/utils/dictionaries.utils'
-import { sortProjects } from '@/utils/sortProjects.utils'
 
 interface Props {
   lang: LangType
@@ -10,7 +9,6 @@ interface Props {
 const Hero = async ({ lang }: Props) => {
   const { page } = await getDictionary(lang)
   const { data } = await getProjects()
-  const sortedPosts = sortProjects(data, true).slice(0, 3)
   return (
     <section className='flex w-full flex-col items-center justify-center 2xl:container '>
       <div className='padding-x-style2 z-10 flex w-full flex-col items-start justify-center gap-10 lg:items-center '>
@@ -28,7 +26,7 @@ const Hero = async ({ lang }: Props) => {
           )}
           <p className='text-center'>{page.home.hero.description}</p>
         </div>
-        <ProjectsGrid items={sortedPosts} lang={lang} />
+        <ProjectsGrid items={data?.result?.slice(0, 3) ?? []} lang={lang} />
       </div>
     </section>
   )

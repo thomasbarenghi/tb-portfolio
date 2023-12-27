@@ -2,7 +2,6 @@ import { Footer, Header, ProjectsGrid } from '@/components'
 import { type Locale } from '@/i18n.config'
 import { getProjects } from '@/services/portfolio/getAll'
 import { getDictionary } from '@/utils/dictionaries.utils'
-import { sortProjects } from '@/utils/sortProjects.utils'
 import type { Metadata } from 'next'
 
 interface Props {
@@ -21,7 +20,6 @@ export const generateMetadata = async (props: Props): Promise<Metadata> => {
 const Work = async ({ params: { lang } }: Props) => {
   const { page, navigation } = await getDictionary(lang)
   const { data } = await getProjects()
-  const sortedPosts = sortProjects(data, false)
   return (
     <>
       <Header theme='light' lang={lang} navigation={navigation} />
@@ -35,7 +33,7 @@ const Work = async ({ params: { lang } }: Props) => {
               </p>
             </div>
           </div>
-          <ProjectsGrid items={sortedPosts} lang={lang} />
+          <ProjectsGrid items={data?.result ?? []} lang={lang} />
         </section>
       </main>
       <Footer lang={lang} />

@@ -1,15 +1,20 @@
 import Endpoints from '@/utils/constants/endpoints.const'
 import { getRequest } from '../apiRequests.service'
 import { formatProjectUrl } from '@/utils/formatProjectUrl.utils'
-import { type IProject } from '@/interfaces/project.interface'
+import { type IProjectResponse } from '@/interfaces/project.interface'
 
-interface Response {
-  data: IProject[]
-  error: boolean
-}
+export const getProjects = async (): Promise<ApiResponse<IProjectResponse>> => {
+  const res = await getRequest<IProjectResponse>({
+    url: Endpoints.PROJECTS,
+    cache: 'no-store'
+  })
 
-export const getProjects = async (): Promise<Response> => {
-  const { data, error } = await getRequest(Endpoints.PROJECTS, {})
-  if (error) throw new Error('Error al obtener los proyectos')
-  return { data: formatProjectUrl(data.result), error }
+  if (res.error) throw new Error('Error al obtener los proyectos')
+  const formattedResult = formatProjectUrl(res?.data?.result ?? [])
+
+  if (res.data) {
+    res.data.result = formattedResult
+  }
+
+  return res
 }

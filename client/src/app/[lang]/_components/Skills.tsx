@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { technologies } from '../_lib/technologies'
+import { technologies } from '../../../lib/technologies'
 import { getDictionary } from '@/utils/dictionaries.utils'
 
 interface Props {

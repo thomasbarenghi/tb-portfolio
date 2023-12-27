@@ -35,6 +35,12 @@ const MarkdownRenderer = ({ markdown }: Props) => (
         ),
         strong: ({ node, ...props }) => (
           <strong className='font-semibold' {...props} />
+        ),
+        ul: ({ node, ...props }) => (
+          <ul className='ml-4 list-disc' {...props} />
+        ),
+        li: ({ node, ...props }) => (
+          <li className='text-base leading-[155%]' {...props} />
         )
       }}
     >

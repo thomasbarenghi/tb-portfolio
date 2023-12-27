@@ -28,6 +28,17 @@
     "work": {
       "title": "Discover my approach to web design and development",
       "description": "Each project represents a challenge that I approached with dedication and creativity, and that allowed me to acquire new skills and knowledge."
+    },
+    "resume": {
+      "download": "Download full resume",
+      "jobTitle": "Full Stack Developer",
+      "description": "From the age of 12, I immersed myself fully in the world of self-taught software development. roles I played diverse, such as electronic technician, LiDAR analyst and Web developer. I am studying a Bachelor's degree in Computing. I believe that every day is a new opportunity to learn and grow.",
+      "tabs": {
+        "education": "Education",
+        "experience": "Professional experience",
+        "skills": "Technologies",
+        "courses": "Certifications"
+      }
     }
   },
   "footer": {
