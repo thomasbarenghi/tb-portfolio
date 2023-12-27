@@ -25,7 +25,7 @@ const Home = async ({ params: { lang } }: Props) => {
   return (
     <>
       <Header theme='light' lang={lang} navigation={navigation} />
-      <main className='mt-[95px] flex flex-col items-center gap-28 pb-5 pt-10'>
+      <main className='mt-[95px] flex flex-col items-center gap-28 py-10'>
         <Hero lang={lang} />
         <Skills lang={lang} />
         <About lang={lang} />

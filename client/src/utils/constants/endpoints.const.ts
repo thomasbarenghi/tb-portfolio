@@ -5,6 +5,7 @@ const Endpoints = {
   CERTIFICATIONS:
     '?query=*[_type == "certifications"] | order(emitionDate desc)',
   PROJECTS: '?query=*[_type == "portfolio"] | order(completionDate desc)',
+  REVIEWS: '?query=*[_type == "reviews"] | order(emitionDate desc)',
   INDIVIDUAL_PROJECT: (slug: string) =>
     `?query=*[_type == "portfolio"][slug.current == "${slug}"]`
 }
