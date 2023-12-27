@@ -22,7 +22,7 @@ const Header = ({
   lang,
   navigation
 }: Props) => {
-  const isMobile = window.innerWidth < 768
+  const isMobile = window.innerWidth < 360
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const pathname = usePathname()
