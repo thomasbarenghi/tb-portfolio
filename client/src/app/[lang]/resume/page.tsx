@@ -29,7 +29,7 @@ const Resume = async ({ params: { lang } }: Props) => {
     <>
       <Header theme='light' lang={lang} navigation={navigation} />
       <main className='mt-[95px] flex flex-col items-center gap-28 py-10'>
-        <article className='padding-x-style2 grid gap-12 2xl:container lg:grid-cols-[auto,_60%] lg:gap-16'>
+        <article className='padding-x-style2 flex flex-col gap-12 2xl:container lg:grid lg:grid-cols-[auto,_60%] lg:gap-16'>
           <section>
             <div className='mt-1  flex flex-col items-start  justify-start gap-3'>
               <div className='flex  w-full flex-col gap-1'>
@@ -48,9 +48,7 @@ const Resume = async ({ params: { lang } }: Props) => {
               />
             </div>
           </section>
-          <section className='flex flex-col gap-5'>
-            <TabsContent content={content} />
-          </section>
+          <TabsContent content={content} />
         </article>
       </main>
       <Footer lang={lang} />
