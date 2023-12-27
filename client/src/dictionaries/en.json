@@ -22,48 +22,28 @@
       },
       "reviews": {
         "title": "What is said about me?",
-        "description": "Reviews from colleagues and superiors."
+        "description": "Reviews from colleagues and superiors.",
+        "btn": "View All"
       }
     },
     "work": {
       "title": "Discover my approach to web design and development",
       "description": "Each project represents a challenge that I approached with dedication and creativity, and that allowed me to acquire new skills and knowledge."
+    },
+    "resume": {
+      "download": "Download full resume",
+      "jobTitle": "Full Stack Developer",
+      "description": "From the age of 12, I immersed myself fully in the world of self-taught software development. roles I played diverse, such as electronic technician, LiDAR analyst and Web developer. I am studying a Bachelor's degree in Computing. I believe that every day is a new opportunity to learn and grow.",
+      "tabs": {
+        "education": "Education",
+        "experience": "Professional experience",
+        "skills": "Technologies",
+        "courses": "Certifications"
+      }
     }
   },
   "footer": {
     "title": "Do you have something in mind?",
     "description": "I want to be part of your team! Contact me now."
-  },
-  "reviews": [
-    {
-      "author": "Fabian Pacheco",
-      "position": "Colleague at Henry | Fullstack Developer",
-      "picture": "/image/resenas/fabian.jpg",
-      "text": "From my experience working with him on the Beat Connect project I can say that he is a great designer, with great creativity and a high level of web development. I can also say that he is a fairly experienced person in front-end and I have noticed that it has no difficulty in solving bugs or problems that may arise during development."
-    },
-    {
-      "author": "Juan Villalba",
-      "position": "Supervisor at BeatConnect | Fullstack Developer",
-      "picture": "/image/resenas/juan.jpg",
-      "text": "I'm sorry if anyone has doubts about Thomas' potential. He is a very high-level professional, has very good criteria in UX/UI. He knows how to modularize code impeccably and understands very well the processes and tasks he must execute. I have been fortunate enough to supervise his work and he has done nothing but grow. The company that is lucky enough to have him in its ranks will undoubtedly win."
-    },
-    {
-      "author": "Lucas Regner",
-      "position": "Colleague at Henry | Fullstack Developer",
-      "picture": "/image/resenas/lucas.png",
-      "text": "Good technical quality to develop in the frontend. Great technical level of code. Excellent handling of Figma and UX/UI design."
-    },
-    {
-      "author": "Valentin Dealbera",
-      "position": "Colleague at Henry | Fullstack Developer at Avature",
-      "picture": "/image/resenas/valentin.png",
-      "text": "Very good colleague and programmer, very good problem solving and creative solutions."
-    },
-    {
-      "author": "Tadeo Massó",
-      "position": "Colleague at Henry | Fullstack Developer",
-      "picture": "/image/resenas/tadeo.png",
-      "text": "Very good programmer, he knows how to listen and adapt to changes, notable soft skills in ux/ui design and very committed to the work."
-    }
-  ]
+  }
 }

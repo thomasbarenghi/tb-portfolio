@@ -22,6 +22,7 @@ const Header = ({
   lang,
   navigation
 }: Props) => {
+  const isMobile = window.innerWidth < 768
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const pathname = usePathname()
@@ -43,6 +44,8 @@ const Header = ({
     : theme === 'transparent'
     ? 'text-white'
     : 'text-black'
+
+  const logoSrc = isMobile ? '/icon/logo-mobile.svg' : '/icon/logo.svg'
 
   return (
     <Navbar
@@ -71,8 +74,8 @@ const Header = ({
         />
         <Link href={Routes.HOME(lang)}>
           <ReactSVG
-            src='/icon/logo.svg'
-            className={`h-[40px] w-[185px] fill-current ${logoFill}`}
+            src={logoSrc}
+            className={`h-[40px] w-auto fill-current ${logoFill}`}
           />
         </Link>
         {layout === 'full' && (

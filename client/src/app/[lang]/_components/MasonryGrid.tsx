@@ -1,6 +1,9 @@
 'use client'
 import Masonry from 'react-masonry-css'
 import Image from 'next/image'
+import { type IReview } from '@/interfaces/review.interface'
+import { useState } from 'react'
+import { Button } from '@/components'
 
 const breakpointColumnsObj = {
   default: 2,
@@ -9,47 +12,63 @@ const breakpointColumnsObj = {
   500: 1
 }
 
-export interface IReview {
-  author: string
-  position: string
-  picture: string
-  text: string
-}
-
 interface Props {
   reviews: IReview[]
+  lang: LangType
+  page: any
 }
 
-const MasonryGrid = ({ reviews }: Props) => (
-  <Masonry
-    breakpointCols={breakpointColumnsObj}
-    className='ml-[-60px] flex w-auto '
-    columnClassName='flex-wrap pl-[60px] '
-  >
-    {reviews.map((item: IReview, index) => (
-      <div
-        key={'r' + index}
-        className='mb-[40px] flex w-full  flex-col gap-3 rounded-3xl'
+const MasonryGrid = ({ reviews, lang, page }: Props) => {
+  const [visibleItems, setVisibleItems] = useState(6)
+
+  const handleShowMore = () => {
+    setVisibleItems(reviews.length)
+  }
+
+  return (
+    <div className='flex flex-col items-center'>
+      <Masonry
+        breakpointCols={breakpointColumnsObj}
+        className='ml-[-60px] flex w-auto '
+        columnClassName='flex-wrap pl-[60px] '
       >
-        <div className='flex items-center gap-4'>
-          <Image
-            src={item.picture}
-            alt={item.author}
-            width={60}
-            height={60}
-            className='aspect-square rounded-full object-cover'
-          />
-          <div>
-            <h3 className='text-body text-primary font-semibold'>
-              {item.author}
-            </h3>
-            <p className='text-sm font-light'>{item.position}</p>
+        {reviews?.slice(0, visibleItems).map((item: IReview, index) => (
+          <div
+            key={'r' + index}
+            className='mb-[40px] flex w-full  flex-col gap-3 rounded-3xl'
+          >
+            <div className='flex items-center gap-4'>
+              <Image
+                src={
+                  typeof item?.authorImage === 'string'
+                    ? item?.authorImage
+                    : '/images/placeholder.png'
+                }
+                alt={item.author}
+                width={60}
+                height={60}
+                className='aspect-square rounded-full object-cover'
+              />
+              <div>
+                <h3 className='text-body font-semibold text-primary'>
+                  {item.author}
+                </h3>
+                <p className='text-sm font-light'>{item.position[lang]}</p>
+              </div>
+            </div>
+            <p className='text-body'>{item.content[lang]}</p>
           </div>
-        </div>
-        <p className='text-body'>{item.text}</p>
-      </div>
-    ))}
-  </Masonry>
-)
+        ))}
+      </Masonry>
+      {visibleItems < reviews.length && (
+        <Button
+          title={page.home.reviews.btn}
+          onClick={handleShowMore}
+          size='sm'
+        />
+      )}
+    </div>
+  )
+}
 
 export default MasonryGrid

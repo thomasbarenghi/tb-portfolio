@@ -17,7 +17,7 @@ export const projectFormatter = (project: IProject): IProject => ({
   }
 })
 
-export const formatProjectUrl = (project: IProject): IProject[] => {
+export const formatProjectUrl = (project: IProject[]): IProject[] => {
   const items =
     Array.isArray(project) &&
     project.map((item: IProject) => projectFormatter(item))
