@@ -5,6 +5,7 @@ import dynamic from 'next/dynamic'
 import { type Locale, i18n } from '@/i18n.config'
 import { type Viewport } from 'next'
 import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 const SWRProvider = dynamic(
   async () => await import('@/context/providers/swr.provider'),
@@ -87,6 +88,7 @@ const RootLayout = ({
         <NextUiProvider>{children}</NextUiProvider>
       </SWRProvider>
       <Analytics />
+      <SpeedInsights />
     </body>
   </html>
 )
