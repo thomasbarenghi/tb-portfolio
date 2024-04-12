@@ -4,6 +4,7 @@ import localFont from 'next/font/local'
 import dynamic from 'next/dynamic'
 import { type Locale, i18n } from '@/i18n.config'
 import { type Viewport } from 'next'
+import { Analytics } from '@vercel/analytics/react'
 
 const SWRProvider = dynamic(
   async () => await import('@/context/providers/swr.provider'),
@@ -85,6 +86,7 @@ const RootLayout = ({
       <SWRProvider>
         <NextUiProvider>{children}</NextUiProvider>
       </SWRProvider>
+      <Analytics />
     </body>
   </html>
 )
