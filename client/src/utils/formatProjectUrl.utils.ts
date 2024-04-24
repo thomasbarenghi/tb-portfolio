@@ -11,16 +11,16 @@ export const projectFormatter = (project: IProject): IProject => ({
   multimedia: {
     coverImage: transformImage(project.multimedia.coverImage),
     mainImage: transformImage(project.multimedia.mainImage),
-    gallery: project.multimedia.gallery.map((image: IImage | string) =>
+    gallery: project?.multimedia?.gallery?.map((image: IImage | string) =>
       transformImage(image)
     )
   }
 })
 
 export const formatProjectUrl = (project: IProject[]): IProject[] => {
-  const items =
-    Array.isArray(project) &&
-    project.map((item: IProject) => projectFormatter(item))
+  const items = Array.isArray(project)
+    ? project?.map((item: IProject) => projectFormatter(item))
+    : []
 
-  return items || []
+  return items
 }
