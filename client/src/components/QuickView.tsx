@@ -1,8 +1,9 @@
+/* eslint-disable @typescript-eslint/indent */
 'use client'
 import React, { useEffect } from 'react'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Button, MarkdownRenderer } from '@/components'
+import { Button, EmblaCarousel, MarkdownRenderer } from '@/components'
 import { createPortal } from 'react-dom'
 import { type IProject } from '@/interfaces/project.interface'
 
@@ -21,14 +22,15 @@ const QuickView = ({ item, isVisible, setQuickVisibility, lang }: Props) => {
       document.body.classList.remove('no-scroll')
     }
   }, [isVisible])
+  console.log(item)
 
   return (
     <>
       {isVisible &&
         createPortal(
-          <div className='fixed left-0 top-0 z-[1000] flex h-screen w-screen flex-col items-end justify-start bg-[#000000e5]'>
+          <div className='fixed left-0 top-0 z-[1000] flex h-screen w-screen flex-col items-center justify-start bg-[#000000e5]'>
             <div
-              className='p-5'
+              className='flex w-full items-center justify-end p-5 2xl:container'
               onClick={() => {
                 setQuickVisibility(false)
               }}
@@ -43,13 +45,13 @@ const QuickView = ({ item, isVisible, setQuickVisibility, lang }: Props) => {
             </div>
             <AnimatePresence>
               <motion.div
-                className='relative flex h-full w-full justify-center rounded-t-[40px]  bg-white py-16  '
+                className='relative flex h-full w-full justify-center rounded-t-[40px] bg-white  py-16 2xl:container'
                 initial={{ y: '100%' }}
                 animate={{ y: 0 }}
                 exit={{ y: '100%' }}
                 transition={{ duration: 0.6 }}
               >
-                <div className='relative flex  h-full  w-full flex-col overflow-y-scroll px-4 2xl:container xs:px-8 lg:w-[70%] lg:px-0  '>
+                <div className='md:scrollbar-general relative  flex  h-full w-full flex-col overflow-y-scroll px-4 2xl:container xs:px-6 lg:w-[70%] lg:px-0  '>
                   <div className='pb-14'>
                     <div className='mb-8 flex flex-col items-start justify-between gap-4 lg:flex-row lg:items-center'>
                       <div className='flex w-full flex-col gap-1 text-start'>
@@ -73,7 +75,7 @@ const QuickView = ({ item, isVisible, setQuickVisibility, lang }: Props) => {
                           <Button
                             target='_blank'
                             href={item?.links.githubLink}
-                            variant='flat'
+                            variant={item?.links.deployLink ? 'flat' : 'solid'}
                             title='Github'
                           />
                         )}
@@ -83,17 +85,26 @@ const QuickView = ({ item, isVisible, setQuickVisibility, lang }: Props) => {
                       className='relative mb-8  w-full items-start text-start'
                       style={{ aspectRatio: '4/3' }}
                     >
-                      <Image
-                        layout='fill'
-                        className='rounded-3xl object-cover '
-                        src={
-                          typeof item?.multimedia?.coverImage === 'string'
-                            ? item?.multimedia?.coverImage
-                            : '/images/placeholder.png'
-                        }
-                        alt={item?.title[lang]}
-                      />
+                      {item?.multimedia?.gallery?.length <= 1 ||
+                      !item?.multimedia?.gallery ? (
+                        <Image
+                          layout='fill'
+                          quality={100}
+                          className='rounded-3xl object-cover '
+                          src={
+                            typeof item?.multimedia?.coverImage === 'string'
+                              ? item?.multimedia?.coverImage
+                              : '/images/placeholder.png'
+                          }
+                          alt={item?.title[lang]}
+                        />
+                      ) : (
+                        <EmblaCarousel
+                          slides={item.multimedia.gallery as string[]}
+                        />
+                      )}
                     </div>
+                    <hr className='mb-6' />
                     <div className='flex flex-col gap-6'>
                       <div className='flex flex-col gap-2 '>
                         <h2 className='text-xl font-semibold'>Stack</h2>
