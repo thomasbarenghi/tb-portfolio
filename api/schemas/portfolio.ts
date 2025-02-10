@@ -109,7 +109,6 @@ const someDocumentType = defineType({
       title: 'Links',
       name: 'links',
       type: 'object',
-      validation: (Rule) => Rule.required(),
       fields: [
         defineField({
           title: 'Deploy',
@@ -124,8 +123,13 @@ const someDocumentType = defineType({
       ],
     }),
     defineField({
-      title: 'Technologies',
+      title: 'Is just design',
+      name: 'justDesign',
+      type: 'boolean',
       validation: (Rule: ObjectRule) => Rule.required(),
+    }),
+    defineField({
+      title: 'Technologies',
       name: 'technologies',
       type: 'object',
       fields: [

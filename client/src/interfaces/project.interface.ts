@@ -16,6 +16,7 @@ export interface IProject {
   multimedia: IMultimedia
   completionDate: Date
   featured: boolean
+  justDesign: boolean
   _type: string
   description: IDescription
   _id: string
@@ -36,8 +37,8 @@ export interface IDescription {
 }
 
 export interface ILinks {
-  deployLink: string
-  githubLink: string
+  deployLink?: string
+  githubLink?: string
 }
 
 export interface IMultimedia {

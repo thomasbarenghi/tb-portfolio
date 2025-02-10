@@ -10,22 +10,15 @@ interface Props {
 
 const Slider = ({ images }: Props) => {
   if (typeof images[0] !== 'string') {
-    console.log('es un arreglo de objetos')
     return
   }
-
-  console.log('es un arreglo de strings', images)
 
   return (
     <Swiper
       spaceBetween={50}
       slidesPerView={3}
-      onSlideChange={() => {
-        console.log('slide change')
-      }}
-      onSwiper={(swiper) => {
-        console.log(swiper)
-      }}
+      onSlideChange={() => {}}
+      onSwiper={(swiper) => {}}
     >
       {images.map((image, index) => (
         <SwiperSlide key={index}>

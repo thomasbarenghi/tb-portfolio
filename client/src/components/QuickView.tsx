@@ -22,7 +22,6 @@ const QuickView = ({ item, isVisible, setQuickVisibility, lang }: Props) => {
       document.body.classList.remove('no-scroll')
     }
   }, [isVisible])
-  console.log(item)
 
   return (
     <>
@@ -64,18 +63,18 @@ const QuickView = ({ item, isVisible, setQuickVisibility, lang }: Props) => {
                         {/* <p className="text-sm">Finalizacion: {item?.completionDate}</p> */}
                       </div>
                       <div className='lg:max-width-[30%] flex w-full gap-2 lg:w-max lg:justify-end '>
-                        {item?.links.deployLink && (
+                        {item?.links?.deployLink && (
                           <Button
                             target='_blank'
                             href={item?.links.deployLink}
-                            title='Deploy'
+                            title='Demo'
                           />
                         )}
-                        {item?.links.githubLink && (
+                        {item?.links?.githubLink && (
                           <Button
                             target='_blank'
-                            href={item?.links.githubLink}
-                            variant={item?.links.deployLink ? 'flat' : 'solid'}
+                            href={item?.links?.githubLink}
+                            variant={item?.links?.deployLink ? 'flat' : 'solid'}
                             title='Github'
                           />
                         )}
@@ -92,8 +91,8 @@ const QuickView = ({ item, isVisible, setQuickVisibility, lang }: Props) => {
                           quality={100}
                           className='rounded-3xl object-cover '
                           src={
-                            typeof item?.multimedia?.coverImage === 'string'
-                              ? item?.multimedia?.coverImage
+                            typeof item?.multimedia?.mainImage === 'string'
+                              ? item?.multimedia?.mainImage
                               : '/images/placeholder.png'
                           }
                           alt={item?.title[lang]}
@@ -106,30 +105,35 @@ const QuickView = ({ item, isVisible, setQuickVisibility, lang }: Props) => {
                     </div>
                     <hr className='mb-6' />
                     <div className='flex flex-col gap-6'>
-                      <div className='flex flex-col gap-2 '>
-                        <h2 className='text-xl font-semibold'>Stack</h2>
-                        <div className='flex flex-col  gap-2 '>
-                          {item?.technologies?.frontTecnologies && (
-                            <p className='text-base'>
-                              <span className='font-medium'>Frontend:</span>{' '}
-                              {item?.technologies.frontTecnologies}
-                            </p>
-                          )}
-                          {item?.technologies?.backTecnologies && (
-                            <p className='text-base'>
-                              <span className='font-medium'>Backend:</span>{' '}
-                              {item?.technologies.backTecnologies}
-                            </p>
-                          )}
-                          {item?.technologies?.databaseTecnologies && (
-                            <p className='text-base'>
-                              <span className='font-medium'>Database:</span>{' '}
-                              {item?.technologies.databaseTecnologies}
-                            </p>
-                          )}
-                        </div>
-                      </div>
-                      <hr className='' />
+                      {!item.justDesign && (
+                        <>
+                          <div className='flex flex-col gap-2 '>
+                            <h2 className='text-xl font-semibold'>Stack</h2>
+                            <div className='flex flex-col  gap-2 '>
+                              {item?.technologies?.frontTecnologies && (
+                                <p className='text-base'>
+                                  <span className='font-medium'>Frontend:</span>{' '}
+                                  {item?.technologies.frontTecnologies}
+                                </p>
+                              )}
+                              {item?.technologies?.backTecnologies && (
+                                <p className='text-base'>
+                                  <span className='font-medium'>Backend:</span>{' '}
+                                  {item?.technologies.backTecnologies}
+                                </p>
+                              )}
+                              {item?.technologies?.databaseTecnologies && (
+                                <p className='text-base'>
+                                  <span className='font-medium'>Database:</span>{' '}
+                                  {item?.technologies.databaseTecnologies}
+                                </p>
+                              )}
+                            </div>
+                          </div>
+                          <hr className='' />
+                        </>
+                      )}
+
                       <div>
                         <MarkdownRenderer markdown={item?.content[lang]} />
                       </div>
