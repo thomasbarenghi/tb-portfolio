@@ -18,14 +18,14 @@ const Hero = async ({ project, lang }: Props) => (
           <p className=' block text-start'>{project?.description[lang]}</p>
         </div>
         <div className='lg:max-width-[30%] flex w-full gap-2 lg:w-max lg:justify-end '>
-          {project?.links.deployLink && (
+          {project?.links?.deployLink && (
             <Button
               target='_blank'
-              href={project?.links.deployLink}
+              href={project?.links?.deployLink}
               title='Deploy'
             />
           )}
-          {project?.links.githubLink && (
+          {project?.links?.githubLink && (
             <Button
               target='_blank'
               href={project?.links.githubLink}
@@ -59,30 +59,35 @@ const Hero = async ({ project, lang }: Props) => (
         }
       /> */}
       <div className='flex flex-col gap-6'>
-        <div className='flex flex-col gap-2 '>
-          <h2 className='text-xl font-semibold'>Stack</h2>
-          <div className='flex flex-col  gap-2 '>
-            {project?.technologies?.frontTecnologies && (
-              <p className='text-base'>
-                <span className='font-medium'>Frontend:</span>{' '}
-                {project?.technologies.frontTecnologies}
-              </p>
-            )}
-            {project?.technologies?.backTecnologies && (
-              <p className='text-base'>
-                <span className='font-medium'>Backend:</span>{' '}
-                {project?.technologies.backTecnologies}
-              </p>
-            )}
-            {project?.technologies?.databaseTecnologies && (
-              <p className='text-base'>
-                <span className='font-medium'>Database:</span>{' '}
-                {project?.technologies.databaseTecnologies}
-              </p>
-            )}
-          </div>
-        </div>
-        <hr className='' />
+        {!project.justDesign && (
+          <>
+            <div className='flex flex-col gap-2 '>
+              <h2 className='text-xl font-semibold'>Stack</h2>
+              <div className='flex flex-col  gap-2 '>
+                {project?.technologies?.frontTecnologies && (
+                  <p className='text-base'>
+                    <span className='font-medium'>Frontend:</span>{' '}
+                    {project?.technologies.frontTecnologies}
+                  </p>
+                )}
+                {project?.technologies?.backTecnologies && (
+                  <p className='text-base'>
+                    <span className='font-medium'>Backend:</span>{' '}
+                    {project?.technologies.backTecnologies}
+                  </p>
+                )}
+                {project?.technologies?.databaseTecnologies && (
+                  <p className='text-base'>
+                    <span className='font-medium'>Database:</span>{' '}
+                    {project?.technologies.databaseTecnologies}
+                  </p>
+                )}
+              </div>
+            </div>
+
+            <hr className='' />
+          </>
+        )}
         <div>
           <MarkdownRenderer markdown={project?.content[lang]} />
         </div>
